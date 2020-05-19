@@ -16,3 +16,16 @@ body {
     height: 576px;
     border: thin green 2px;
 }
+
+#scoreContainer {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	text-align: left;
+	font-size: 1.5em;
+    z-index: 30;
+}
+
+.score {
+    padding: 10px;
+}
