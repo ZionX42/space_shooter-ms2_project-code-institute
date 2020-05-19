@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(37, 37, 37);
+    font-family: Impact, Charcoal, sans-serif;
+    color: white;
+}
+
+#gameWindow {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#gameArea {
+    position: relative;
+    width: 720px;
+    height: 576px;
+    border: thin green 2px;
+}
