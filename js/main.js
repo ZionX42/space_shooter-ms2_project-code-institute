@@ -1,5 +1,10 @@
-// Main JavaScript for the game
 
-$ function () {
-    console.log ("TEST");
-}
+
+// Testing which key controls can be used
+$ (function () {
+ $ (document).keydown(
+     function(e) {
+         console.log(e.which);
+     }
+ );
+    });
