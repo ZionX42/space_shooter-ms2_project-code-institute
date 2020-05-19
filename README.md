@@ -1,2 +1,2 @@
-# flappy-ms2_project-code-institute
-A flappy bird style game to showcase Javascript skills
+# space_shooter-ms2_project-code-institute
+A Space Shooter themed game to showcase my Javascript skills
