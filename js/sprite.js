@@ -7,7 +7,33 @@ class Sprite {
     this.size = sizePx;
     this.anchorShift = new Point(-this.size.width / 2, -this.size.height / 2);
   }
-// Anchor position
+// Adding the object to the game area
+  addToBoard(shift) {
+    let div = document.createElement("div");
+    div.classList.add("sprite");
+    div.id = this.divName;
+    div.style.backgroundImage = "url('" + this.imgName + "')";
+    div.style.width = this.size.width + 'px';
+    div.style.height = this.size.height + 'px';
+    $(GameSettings.playAreaDiv).append(div);
+
+    this.setPosition(this.position.x, this.position.y, shift);
+
+} 
+
+  //   Removes the object
+  removeFromBoard() {
+    $("#" + this.divName).remove();
+  }
+
+  draw() {
+    $("#" + this.divName).css({
+      left: this.position.x,
+      top: this.position.y,
+    });
+  }
+
+  // Anchor position
   setPosition(x, y, shift) {
     this.position.update(x, y);
     if (shift == true) {
