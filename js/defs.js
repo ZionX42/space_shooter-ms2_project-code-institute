@@ -1,33 +1,38 @@
 // Image const list
-const ImageFiles = [
-    'rick_spacecraft.png'
-];
+const ImageFiles = ["rick_spacecraft.png"];
 
-// Keypresses for the movement of the spaceship.  
+// Keypresses for the movement of the spaceship.
 const GameSettings = {
-    keyPress: {
-        left: 37,
-        right: 39,
-        up: 38,
-        down: 40,
-        space: 32
-},
+  keyPress: {
+    left: 37,
+    right: 39,
+    up: 38,
+    down: 40,
+    space: 32,
+  },
 
-// Game Area starting point
-gameAreaWidth: 720,
-gameAreaHeight: 576,
-gameAreDiv: "#gameArea",
+  // Game Area starting point
+  gameAreaWidth: 720,
+  gameAreaHeight: 576,
+  gameAreDiv: "#gameArea",
 
-playerDivName: "playerSprite",
-playerStart: {
+  playerDivName: "playerSprite",
+  playerStart: {
     x: 360,
-    y: 440
-}
+    y: 440,
+  },
 
+  // Number of lives the Player has at start
+  playerStartLives: 3,
+  playerState: {
+    ok: 0,
+    dead: 1,
+    hitFlashing: 2,
+  },
 };
 
-//  Game Manager 
+//  Game Manager
 let GameManager = {
-    assets: {},
-    player: undefined
-}
+  assets: {},
+  player: undefined,
+};
