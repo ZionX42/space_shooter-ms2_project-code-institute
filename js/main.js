@@ -1,7 +1,7 @@
 // Resetting player function
 function resetPlayer() {
     if (GameManager.player == undefined) {
-        let asset = GameManager.assets["rick_spacecraft.png"];
+        let asset = GameManager.assets["rick_spacecraft"];
 
         GameManager.player = new Player(
             GameSettings.playerDivName,
@@ -18,7 +18,6 @@ function resetPlayer() {
 function init() {
     console.log("Main Game init()");
     resetPlayer();
-
 }
 
 function processAsset(indexNum) {

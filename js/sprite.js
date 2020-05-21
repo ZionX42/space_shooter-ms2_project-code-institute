@@ -15,7 +15,7 @@ class Sprite {
     div.style.backgroundImage = "url('" + this.imgName + "')";
     div.style.width = this.size.width + 'px';
     div.style.height = this.size.height + 'px';
-    $(GameSettings.playAreaDiv).append(div);
+    $(GameSettings.gameAreaDiv).append(div);
 
     this.setPosition(this.position.x, this.position.y, shift);
 
@@ -28,8 +28,8 @@ class Sprite {
 
   draw() {
     $("#" + this.divName).css({
-      left: this.position.x,
-      top: this.position.y,
+      "left": this.position.x,
+      "top": this.position.y,
     });
   }
 
