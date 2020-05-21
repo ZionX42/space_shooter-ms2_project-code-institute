@@ -1,31 +1,41 @@
 body {
-    background-color: rgb(37, 37, 37);
-    font-family: Impact, Charcoal, sans-serif;
-    color: white;
+  background-color: rgb(37, 37, 37);
+  font-family: Impact, Charcoal, sans-serif;
+  color: white;
 }
 
 #gameWindow {
-    position: relative;
-    display: flex;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 #gameArea {
-    position: relative;
-    width: 720px;
-    height: 576px;
-    border: thin green 2px;
+  position: relative;
+  width: 720px;
+  height: 576px;
+  border: thin green 2px;
 }
 
 #scoreContainer {
-	position: absolute;
-	left: 10px;
-	top: 10px;
-	text-align: left;
-	font-size: 1.5em;
-    z-index: 30;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  text-align: left;
+  font-size: 1.5em;
+  z-index: 30;
 }
 
 .score {
-    padding: 10px;
+  padding: 10px;
+}
+
+.sprite {
+  background-image: url("../assets/rick_spacecraft.png");
+  width: 49px;
+  height: 37px;
+  top: 400px;
+  left: 360px;
+  position: absolute;
+  z-index: 10;
 }
