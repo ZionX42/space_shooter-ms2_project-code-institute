@@ -3,7 +3,7 @@ function resetPlayer() {
   if (GameManager.player == undefined) {
     let asset = GameManager.assets["rick_spacecraft.png"];
 
-    GameManager.player = new Sprite(
+    GameManager.player = new Player(
       GameSettings.playerDivName,
       new Point(GameSettings.playerStart.x, GameSettings.playerStart.y),
       asset.fileName,
@@ -12,6 +12,7 @@ function resetPlayer() {
     GameManager.player.addToBoard(true);
   }
   console.log("resetplayer() GameManager.player:", GameManager.player);
+  GameManager.player.reset();
 }
 
 // Image loading
