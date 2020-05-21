@@ -31,11 +31,6 @@ body {
 }
 
 .sprite {
-  background-image: url("../../assets/rick_spacecraft.png");
-  width: 80px;
-  height: 52px;
-  top: 400px;
-  left: 360px;
-  position: absolute;
+    position: absolute;
   z-index: 10;
 }
