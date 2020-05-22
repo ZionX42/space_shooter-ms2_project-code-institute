@@ -27,13 +27,13 @@ class Player extends Sprite {
     );
   }
 
-  // Player movement function
-// move(x,y) {
-//   let xStep = GameSettings.playerMoveStep * x;
-//         let yStep = GameSettings.playerMoveStep * y;
+  // Player direction movement function
+move(x,y) {
+  let xStep = GameSettings.playerMoveStep * x;
+        let yStep = GameSettings.playerMoveStep * y;
 
-//         this.incrementPosition(xStep, yStep);
-// }
+        this.incrementPosition(xStep, yStep);
+}
 
   // Adding the hit scores of the enemy
   incrementScore(amount) {

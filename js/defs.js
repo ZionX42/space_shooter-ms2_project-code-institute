@@ -1,5 +1,5 @@
 // Image const list
-const ImageFiles = ['rick_spacecraft'];
+const ImageFiles = ["rick_spacecraft"];
 
 // Keypresses for the movement of the spaceship.
 const GameSettings = {
@@ -14,9 +14,9 @@ const GameSettings = {
   // Game Area starting point
   gameAreaWidth: 720,
   gameAreaHeight: 576,
-  gameAreDiv: '#gameArea',
+  gameAreDiv: "#gameArea",
 
-  playerDivName: 'playerSprite',
+  playerDivName: "playerSprite",
   playerStart: {
     x: 360,
     y: 440,
@@ -28,12 +28,14 @@ const GameSettings = {
     ok: 0,
     dead: 1,
     hitFlashing: 2,
-  }
+  },
+
   // Pixel count for directional movement
+  playerMoveStep: 8
 };
 
 //  Game Manager
 let GameManager = {
   assets: {},
-  player: undefined
+  player: undefined,
 };
