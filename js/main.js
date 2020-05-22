@@ -46,19 +46,18 @@ $(function () {
     $(document).keydown(function (e) {
             switch (e.which) {
                 case GameSettings.keyPress.up:
-                    console.log("up");
+                    GameManager.player.move(0, 1);
                     break;
                 case GameSettings.keyPress.down:
-                    console.log("down");
+                GameManager.player.move(0, 1);
                     break;
                 case GameSettings.keyPress.left:
-                    console.log("left");
+                GameManager.player.move(-1, 0);
                     break;
                 case GameSettings.keyPress.right:
-                    console.log("right");
+                GameManager.player.move(1, 0);
                     break;
                 case GameSettings.keyPress.space:
-                    console.log("space");
                     break;
             }
         }
