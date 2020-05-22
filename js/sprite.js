@@ -7,7 +7,8 @@ class Sprite {
     this.size = sizePx;
     this.anchorShift = new Point(-this.size.width / 2, -this.size.height / 2);
   }
-// Adding the object to the game area
+
+  // Adding the player sprite to the game area in HTML
   addToBoard(shift) {
     let div = document.createElement("div");
     div.classList.add("sprite");
@@ -18,8 +19,7 @@ class Sprite {
     $(GameSettings.gameAreaDiv).append(div);
 
     this.setPosition(this.position.x, this.position.y, shift);
-
-} 
+  }
 
   //   Removes the object
   removeFromBoard() {

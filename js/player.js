@@ -28,12 +28,12 @@ class Player extends Sprite {
   }
 
   // Player movement function
-move(x,y) {
-  let xStep = GameSettings.playerMoveStep * x;
-        let yStep = GameSettings.playerMoveStep * y;
+// move(x,y) {
+//   let xStep = GameSettings.playerMoveStep * x;
+//         let yStep = GameSettings.playerMoveStep * y;
 
-        this.incrementPosition(xStep, yStep);
-}
+//         this.incrementPosition(xStep, yStep);
+// }
 
   // Adding the hit scores of the enemy
   incrementScore(amount) {
@@ -44,7 +44,7 @@ move(x,y) {
 
   // Score container counter displayer
   setLives() {
-    $("#lives").text("x " + this.lives);
+    $("#lives").text('x ' + this.lives);
   }
   setScore() {
     $("#score").text(this.score);

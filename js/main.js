@@ -1,7 +1,7 @@
 // Resetting player function
 function resetPlayer() {
     if (GameManager.player == undefined) {
-        let asset = GameManager.assets["rick_spacecraft"];
+        let asset = GameManager.assets['rick_spacecraft'];
 
         GameManager.player = new Player(
             GameSettings.playerDivName,
@@ -10,7 +10,7 @@ function resetPlayer() {
         );
         GameManager.player.addToBoard(true);
     }
-    console.log("resetplayer() GameManager.player:" , GameManager.player);
+    console.log('resetplayer() GameManager.player:' , GameManager.player);
     GameManager.player.reset();
 }
 
@@ -22,7 +22,7 @@ function init() {
 
 function processAsset(indexNum) {
     let img = new Image();
-    let fileName = "assets/" + ImageFiles[indexNum] + ".png";
+    let fileName = 'assets/' + ImageFiles[indexNum] + '.png';
     img.src = fileName;
     img.onload = function () {
         GameManager.assets[ImageFiles[indexNum]] = {

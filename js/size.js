@@ -7,5 +7,5 @@ class Size {
     }
 }
 
-let s = new Size (19 , 30);
-console.log ("s:" , s);
+// let s = new Size (19 , 30);
+// console.log ("s:" , s);
