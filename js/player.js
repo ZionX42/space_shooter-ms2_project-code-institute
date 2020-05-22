@@ -1,6 +1,6 @@
 // Player class inherting from Sprite class. Also the player score
 class Player extends Sprite {
-  constructor(divName, position, assetDesc) {
+  constructor(divName, position, assetDesc, boundaryRect) {
     super(
       divName,
       position,
@@ -11,6 +11,8 @@ class Player extends Sprite {
     this.score = 0;
     this.highScore = 0;
     this.state = GameSettings.playerState.ok;
+    this.boundaryRect = boundaryRect;
+    this.boundaryRect.shift(this.anchorShift.x, this.anchorShift.y);
   }
 
   reset() {
@@ -28,12 +30,19 @@ class Player extends Sprite {
   }
 
   // Player direction movement function
-move(x,y) {
-  let xStep = GameSettings.playerMoveStep * x;
-        let yStep = GameSettings.playerMoveStep * y;
+  move(x, y) {
+    let xStep = GameSettings.playerMoveStep * x;
+    let yStep = GameSettings.playerMoveStep * y;
 
-        this.incrementPosition(xStep, yStep);
-}
+    if (this.boundaryRect.OutsideHorizontal(xStep + this.position.x) == true) {
+      xStep = 0;
+    }
+    if (this.boundaryRect.OutsideVertical(yStep + this.position.y) == true) {
+      yStep = 0;
+    }
+
+    this.incrementPosition(xStep, yStep);
+  }
 
   // Adding the hit scores of the enemy
   incrementScore(amount) {
@@ -44,7 +53,7 @@ move(x,y) {
 
   // Score container counter displayer
   setLives() {
-    $("#lives").text('x ' + this.lives);
+    $("#lives").text("x " + this.lives);
   }
   setScore() {
     $("#score").text(this.score);
@@ -56,5 +65,3 @@ move(x,y) {
     $("#highScore").text(this.highScore);
   }
 }
-
-
