@@ -29,6 +29,8 @@ const GameSettings = {
     dead: 1,
     hitFlashing: 2,
   },
+  // Pixel count for directional movement
+  playerMoveStep: 8
 };
 
 //  Game Manager
@@ -36,3 +38,5 @@ let GameManager = {
   assets: {},
   player: undefined,
 };
+
+
