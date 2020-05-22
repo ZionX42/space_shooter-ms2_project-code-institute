@@ -14,7 +14,7 @@ body {
   position: relative;
   width: 720px;
   height: 576px;
-  border: thin green 2px;
+  border: solid green 10px;
 }
 
 #scoreContainer {
@@ -31,6 +31,6 @@ body {
 }
 
 .sprite {
-    position: absolute;
+  position: absolute;
   z-index: 10;
 }

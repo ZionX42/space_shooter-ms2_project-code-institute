@@ -1,5 +1,5 @@
 // Image const list
-const ImageFiles = ["rick_spacecraft.png"];
+const ImageFiles = ["rick_spacecraft"];
 
 // Keypresses for the movement of the spaceship.
 const GameSettings = {
