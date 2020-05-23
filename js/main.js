@@ -52,7 +52,7 @@ $(function () {
   $(document).keydown(function (e) {
     switch (e.which) {
       case GameSettings.keyPress.up:
-        GameManager.player.move(0, 1);
+        GameManager.player.move(0, -1);
         break;
       case GameSettings.keyPress.down:
         GameManager.player.move(0, 1);
