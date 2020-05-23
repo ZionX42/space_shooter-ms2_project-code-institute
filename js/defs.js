@@ -14,7 +14,7 @@ const GameSettings = {
   // Game Area starting point
   gameAreaWidth: 720,
   gameAreaHeight: 576,
-  gameAreDiv: "#gameArea",
+  gameAreaDiv: "#gameArea",
 
   playerDivName: "playerSprite",
   playerStart: {
