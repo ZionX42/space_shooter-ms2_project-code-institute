@@ -1,3 +1,15 @@
+// Function to call the FPS of the game
+function tick() {
+  let now = Date.now();
+  let dt = now - GameManager.lastUpdated;
+  GameManager.lastUpdated = now;
+  GameManager.fps = parseInt(1000 / dt);
+
+  $("#divFPS").text("FPS: " + GameManager.fps);
+
+  setTimeout(tick, GameSettings.targetFPS);
+}
+
 // Resetting player function
 function resetPlayer() {
   if (GameManager.player == undefined) {
