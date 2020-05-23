@@ -5,7 +5,7 @@ function tick() {
   GameManager.lastUpdated = now;
   GameManager.fps = parseInt(1000 / dt);
 
-  $("#divFPS").text("FPS: " + GameManager.fps);
+  $("#FPS").text("FPS: " + GameManager.fps);
 
   setTimeout(tick, GameSettings.targetFPS);
 }
@@ -36,6 +36,7 @@ function resetPlayer() {
 function init() {
   console.log("Main Game init()");
   resetPlayer();
+  setTimeout(tick, GameSettings.targetFPS);
 }
 
 function processAsset(indexNum) {

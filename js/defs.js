@@ -1,5 +1,5 @@
 // Image const list
-const ImageFiles = ["rick_spacecraft"];
+const ImageFiles = ["rick_spacecraft", "burrito_dog"];
 
 // Keypresses for the movement of the spaceship.
 const GameSettings = {
@@ -13,6 +13,12 @@ const GameSettings = {
 
   // Game Area starting point
   targetFPS: 1000 / 60,
+
+  // Bullet spead
+  bulletSpeed: 700 / 1000,
+    bulletLife: 4000,
+    bulletFireRate: 2000,
+
   gameAreaWidth: 720,
   gameAreaHeight: 576,
   gameAreaDiv: "#gameArea",
@@ -39,6 +45,7 @@ const GameSettings = {
 let GameManager = {
   assets: {},
   player: undefined,
+  bullets: undefined,
   lastUpdated: Date.now(),
   elapsedTime: 0,
   fps: 0
