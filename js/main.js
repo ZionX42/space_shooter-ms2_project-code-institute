@@ -7,6 +7,8 @@ function tick() {
 
   $("#FPS").text("FPS: " + GameManager.fps);
 
+  GameManager.bullets.update(dt);
+
   setTimeout(tick, GameSettings.targetFPS);
 }
 
@@ -89,4 +91,5 @@ $(function () {
         break;
     }
   });
+  processAsset(0);
 });

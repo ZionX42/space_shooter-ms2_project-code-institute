@@ -10,7 +10,7 @@ class Bullet extends Sprite {
 // Defining the bullets funtions to update throughout the game & bullet direction
 update(dt) {
     let inc = dt * GameSettings.bulletSpeed;
-    this.incrementPosition(0, -inc);
+    this.incrementPosition(inc, 0);
     this.life -= dt;
     if (this.life < 0) {
         this.killMe();
