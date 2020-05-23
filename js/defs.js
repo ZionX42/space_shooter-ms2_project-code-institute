@@ -12,6 +12,7 @@ const GameSettings = {
   },
 
   // Game Area starting point
+  targetFPS: 1000 / 60,
   gameAreaWidth: 720,
   gameAreaHeight: 576,
   gameAreaDiv: "#gameArea",

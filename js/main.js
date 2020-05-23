@@ -10,8 +10,8 @@ function resetPlayer() {
       new Rect(
         40,
         40,
-        GameSettings.playAreaWidth - 80,
-        GameSettings.playAreaHeight - 80
+        GameSettings.gameAreaWidth - 80,
+        GameSettings.gameAreaHeight - 80
       )
     );
     GameManager.player.addToBoard(true);
