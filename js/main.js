@@ -10,6 +10,15 @@ function tick() {
   setTimeout(tick, GameSettings.targetFPS);
 }
 
+// Reseting bullet function to allow right direction
+function resetBullets() {
+  if (GameManager.bullets != undefined) {
+      GameManager.bullets.reset();
+  } else {
+      GameManager.bullets = new BulletCollection(GameManager.player);
+  }
+}
+
 // Resetting player function
 function resetPlayer() {
   if (GameManager.player == undefined) {
@@ -32,10 +41,11 @@ function resetPlayer() {
   GameManager.player.reset();
 }
 
-// Image loading
-function init() {
+// Images & game loading
+function resetGame() {
   console.log("Main Game init()");
   resetPlayer();
+  resetBullets();
   setTimeout(tick, GameSettings.targetFPS);
 }
 
@@ -54,7 +64,7 @@ function processAsset(indexNum) {
       processAsset(indexNum);
     } else {
       console.log("Assets Done:", GameManager.assets);
-      init();
+      resetGame();
     }
   };
 }
