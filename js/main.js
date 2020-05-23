@@ -58,8 +58,9 @@ function processAsset(indexNum) {
     GameManager.assets[ImageFiles[indexNum]] = {
       width: this.width,
       height: this.height,
-      fileName: fileName,
-    };
+      fileName: fileName
+    }
+
     indexNum++;
     if (indexNum < ImageFiles.length) {
       processAsset(indexNum);
@@ -67,7 +68,7 @@ function processAsset(indexNum) {
       console.log("Assets Done:", GameManager.assets);
       resetGame();
     }
-  };
+  }
 }
 
 // Testing which key controls can be used
