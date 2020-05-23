@@ -21,25 +21,24 @@ function resetBullets() {
 
 // Resetting player function
 function resetPlayer() {
-  if (GameManager.player == undefined) {
-    let asset = GameManager.assets["rick_spacecraft"];
+	if (GameManager.player == undefined) {
+        console.log('resetPlayer() making new');
+        let asset = GameManager.assets["rick_spacecraft"];
 
-    GameManager.player = new Player(
-      GameSettings.playerDivName,
-      new Point(GameSettings.playerStart.x, GameSettings.playerStart.y),
-      asset,
-      new Rect(
-        40,
-        40,
-        GameSettings.gameAreaWidth - 80,
-        GameSettings.gameAreaHeight - 80
-      )
-    );
-    GameManager.player.addToBoard(true);
-  }
-  console.log("resetplayer() GameManager.player:", GameManager.player);
-  GameManager.player.reset();
+         GameManager.player = new Player(
+            'playerSprite', 
+         	new Point(GameSettings.playerStart.x, GameSettings.playerStart.y), 
+             GameManager.assets["rick_spacecraft"],
+             new Rect(40, 40, GameSettings.playAreaWidth - 80, GameSettings.playAreaHeight - 80));
+         GameManager.player.addToBoard(true);
+
+		console.log('resetPlayer() added new GameManager.player:' , GameManager.player);
+    } 
+
+    console.log('resetPlayer() GameManager.player:' , GameManager.player);
+    GameManager.player.reset();
 }
+
 
 // Images & game loading
 function resetGame() {

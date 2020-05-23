@@ -8,7 +8,7 @@ const GameSettings = {
     right: 39,
     up: 38,
     down: 40,
-    space: 32,
+    space: 32
   },
 
   // Game Area starting point
@@ -34,7 +34,7 @@ const GameSettings = {
   playerState: {
     ok: 0,
     dead: 1,
-    hitFlashing: 2,
+    hitFlashing: 2
   },
 
   // Pixel count for directional movement
