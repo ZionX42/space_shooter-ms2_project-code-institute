@@ -15,32 +15,40 @@ function tick() {
 // Reseting bullet function to allow right direction
 function resetBullets() {
   if (GameManager.bullets != undefined) {
-      GameManager.bullets.reset();
+    GameManager.bullets.reset();
   } else {
-      GameManager.bullets = new BulletCollection(GameManager.player);
+    GameManager.bullets = new BulletCollection(GameManager.player);
   }
 }
 
 // Resetting player function
 function resetPlayer() {
-	if (GameManager.player == undefined) {
-        console.log('resetPlayer() making new');
-        let asset = GameManager.assets["rick_spacecraft"];
+  if (GameManager.player == undefined) {
+    console.log("resetPlayer() making new");
+    let asset = GameManager.assets["rick_spacecraft"];
 
-         GameManager.player = new Player(
-            'playerSprite', 
-         	new Point(GameSettings.playerStart.x, GameSettings.playerStart.y), 
-             GameManager.assets["rick_spacecraft"],
-             new Rect(40, 40, GameSettings.playAreaWidth - 80, GameSettings.playAreaHeight - 80));
-         GameManager.player.addToBoard(true);
+    GameManager.player = new Player(
+      "playerSprite",
+      new Point(GameSettings.playerStart.x, GameSettings.playerStart.y),
+      GameManager.assets["rick_spacecraft"],
+      new Rect(
+        40,
+        40,
+        GameSettings.playAreaWidth - 80,
+        GameSettings.playAreaHeight - 80
+      )
+    );
+    GameManager.player.addToBoard(true);
 
-		console.log('resetPlayer() added new GameManager.player:' , GameManager.player);
-    } 
+    console.log(
+      "resetPlayer() added new GameManager.player:",
+      GameManager.player
+    );
+  }
 
-    console.log('resetPlayer() GameManager.player:' , GameManager.player);
-    GameManager.player.reset();
+  console.log("resetPlayer() GameManager.player:", GameManager.player);
+  GameManager.player.reset();
 }
-
 
 // Images & game loading
 function resetGame() {
@@ -58,8 +66,8 @@ function processAsset(indexNum) {
     GameManager.assets[ImageFiles[indexNum]] = {
       width: this.width,
       height: this.height,
-      fileName: fileName
-    }
+      fileName: fileName,
+    };
 
     indexNum++;
     if (indexNum < ImageFiles.length) {
@@ -68,12 +76,14 @@ function processAsset(indexNum) {
       console.log("Assets Done:", GameManager.assets);
       resetGame();
     }
-  }
+  };
 }
 
-// Testing which key controls can be used
+// Game setting for controls & sequences
 $(function () {
-  processAsset(0);
+  console.log("ready..!");
+  console.log("GameSettings:GameSettings", GameSettings);
+  setUpSequences();
   $(document).keydown(function (e) {
     switch (e.which) {
       case GameSettings.keyPress.up:

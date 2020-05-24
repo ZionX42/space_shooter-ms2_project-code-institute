@@ -1,8 +1,52 @@
 // Image const list reference
-const ImageFiles = ["rick_spacecraft", "bullets/pickledRick", "enemies/jerryHead"];
+const ImageFiles = [
+  "rick_spacecraft",
+  "bullets/pickledRick",
+  "enemies/jerryHead",
+];
 
-// Way Points for the enemy movements
-
+// Way Points for the enemy movements & starting points
+const WayPoints = {
+  LEFTTORIGHTSHALLOW: [
+    {
+      rotation: 0,
+      x: 60,
+      y: -90,
+      dir_x: 0,
+      dir_y: 0,
+    },
+    {
+      rotation: 0,
+      x: 60,
+      y: 128,
+      dir_x: 0,
+      dir_y: 1,
+    },
+    {
+      rotation: 0,
+      x: 810,
+      y: 128,
+      dir_x: 1,
+      dir_y: 0,
+    },
+  ],
+  STREAMFROMB180: [
+    {
+      rotation: 0,
+      x: 180,
+      y: 620,
+      dir_x: 0,
+      dir_y: 0,
+    },
+    {
+      rotation: 0,
+      x: 180,
+      y: -90,
+      dir_x: 0,
+      dir_y: -1,
+    },
+  ],
+};
 
 // Keypresses for the movement of the spaceship.
 const GameSettings = {
