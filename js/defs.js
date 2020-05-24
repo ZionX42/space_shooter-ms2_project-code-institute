@@ -1,5 +1,5 @@
 // Image const list
-const ImageFiles = ["rick_spacecraft", "burrito_dog"];
+const ImageFiles = ["rick_spacecraft", "pickledRick"];
 
 // Keypresses for the movement of the spaceship.
 const GameSettings = {
@@ -19,7 +19,7 @@ const GameSettings = {
     bulletLife: 4000,
     bulletFireRate: 2000,
 
-  gameAreaWidth: 720,
+  gameAreaWidth: 790,
   gameAreaHeight: 576,
   gameAreaDiv: "#gameArea",
 

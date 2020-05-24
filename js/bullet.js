@@ -58,7 +58,7 @@ class BulletCollection {
                 this.listBullets.push(
                     new Bullet(
                         'bullet_' + this.total_bullets,
-                        GameManager.assets["burrito_dog"],
+                        GameManager.assets["pickledRick"],
                         new Point(this.player.position.x + (this.player.size.width / 2), 
                         this.player.position.y)
                     )

@@ -12,9 +12,9 @@ body {
 
 #gameArea {
   position: relative;
-  width: 720px;
+  width: 790px;
   height: 576px;
-  border: solid green 10px;
+  border: solid green 5px;
   overflow: hidden;
 }
 
