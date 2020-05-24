@@ -1,5 +1,8 @@
-// Image const list
-const ImageFiles = ["rick_spacecraft", "pickledRick"];
+// Image const list reference
+const ImageFiles = ["rick_spacecraft", "bullets/pickledRick", "enemies/jerryHead"];
+
+// Way Points for the enemy movements
+
 
 // Keypresses for the movement of the spaceship.
 const GameSettings = {
@@ -8,7 +11,7 @@ const GameSettings = {
     right: 39,
     up: 38,
     down: 40,
-    space: 32
+    space: 32,
   },
 
   // Game Area starting point
@@ -16,8 +19,8 @@ const GameSettings = {
 
   // Bullet spead
   bulletSpeed: 700 / 1000,
-    bulletLife: 4000,
-    bulletFireRate: 2000,
+  bulletLife: 4000,
+  bulletFireRate: 2000,
 
   gameAreaWidth: 790,
   gameAreaHeight: 576,
@@ -34,11 +37,11 @@ const GameSettings = {
   playerState: {
     ok: 0,
     dead: 1,
-    hitFlashing: 2
+    hitFlashing: 2,
   },
 
   // Pixel count for directional movement
-  playerMoveStep: 8
+  playerMoveStep: 8,
 };
 
 //  Game Manager
@@ -48,5 +51,5 @@ let GameManager = {
   bullets: undefined,
   lastUpdated: Date.now(),
   elapsedTime: 0,
-  fps: 0
+  fps: 0,
 };
