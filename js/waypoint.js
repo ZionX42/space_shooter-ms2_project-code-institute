@@ -1,4 +1,4 @@
-// Adding waypoint for enemies direction memicing
+// Adding waypoint class for enemies direction memicing
 class Waypoint {
     constructor(x,y,dir_x,dir_y) {
         this.point = new Point(x, y);
