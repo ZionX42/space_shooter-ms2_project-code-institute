@@ -1,3 +1,9 @@
+// Adding the enemy Sprite to be loaded to game
+class Enemy extends Sprite {
+    
+}
+
+
 // Sequence of enemies spawning into the game that follow a set of waypoints across the screen
 function addEnemySequence(delayBefore, image, score, 
     lives, speed, number, delayBetween, waypoints) {
