@@ -48,6 +48,8 @@ const WayPoints = {
   ],
 };
 
+let EnemySequences = [];
+
 // Keypresses for the movement of the spaceship.
 const GameSettings = {
   keyPress: {

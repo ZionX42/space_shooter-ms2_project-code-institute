@@ -81,8 +81,7 @@ function processAsset(indexNum) {
 
 // Game setting for controls & sequences
 $(function () {
-  console.log("ready..!");
-  console.log("GameSettings:GameSettings", GameSettings);
+  
   setUpSequences();
   $(document).keydown(function (e) {
     switch (e.which) {
