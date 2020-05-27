@@ -14,4 +14,11 @@ class Point {
         this.y += iy;
     }
 
+    equalToPoint(x, y) {
+        if (this.x == x && this.y == y) {
+            return true;
+        }
+        return false;
+    }
+    
 }

@@ -19,63 +19,156 @@ class Enemy extends Sprite {
     this.readInWaypoints(sequence.waypoints);
   }
 
-//   Shifting the movement of the enemy
+  //   Shifting the movement of the enemy
+
   readInWaypoints(wpList) {
     this.waypointList = [];
     for (let i = 0; i < wpList.length; ++i) {
-        let t_wp = wpList[i];
-        let n_wp = new Waypoint(
-            t_wp.x + this.anchorShift.x , 
-            t_wp.y + this.anchorShift.y, 
-            t_wp.dir_x, 
-            t_wp.dir_y
-            );
-        this.waypointList.push(n_wp);
+      let t_wp = wpList[i];
+      let n_wp = new Waypoint(
+        t_wp.x + this.anchorShift.x,
+        t_wp.y + this.anchorShift.y,
+        t_wp.dir_x,
+        t_wp.dir_y
+      );
+      this.waypointList.push(n_wp);
     }
-}
+  }
 
-// Setting enemies to move towards a particular points
-moveTowardPoint(dt) {
+  update(dt) {
+    switch (this.state) {
+      case GameSettings.enemyState.movingToWaypoint:
+        this.moveTowardPoint(dt);
+        break;
+    }
+  }
+
+  // Setting enemies to move towards a particular points
+  moveTowardPoint(dt) {
     let inc = dt * this.speed;
-    this.incrementPosition(inc * this.targetWayPoint.dir_x, inc * this.targetWayPoint.dir_y);
+    this.incrementPosition(
+      inc * this.targetWayPoint.dir_x,
+      inc * this.targetWayPoint.dir_y
+    );
 
-    if(Math.abs(this.position.x - this.targetWayPoint.point.x) < Math.abs(inc) &&
-    Math.abs(this.position.y - this.targetWayPoint.point.y) < Math.abs(inc)) {
-        this.updatePosition( this.targetWayPoint.point.x,  this.targetWayPoint.point.y);
+    if (
+      Math.abs(this.position.x - this.targetWayPoint.point.x) < Math.abs(inc) &&
+      Math.abs(this.position.y - this.targetWayPoint.point.y) < Math.abs(inc)
+    ) {
+      this.updatePosition(
+        this.targetWayPoint.point.x,
+        this.targetWayPoint.point.y
+      );
     }
 
-    if(this.position.equalToPoint(this.targetWayPoint.point.x, this.targetWayPoint.point.y) == true) {
-        if (this.targetWayPointNumber == this.lastWayPointIndex) {
-            this.killMe();
-            console.log('reached end');
-        } else {
-            this.setNextWayPoint();
-        }
+    if (
+      this.position.equalToPoint(
+        this.targetWayPoint.point.x,
+        this.targetWayPoint.point.y
+      ) == true
+    ) {
+      if (this.targetWayPointNumber == this.lastWayPointIndex) {
+        this.killMe();
+        console.log("reached end");
+      } else {
+        this.setNextWayPoint();
+      }
     }
-}
+  }
 
-setNextWayPoint() {
+  setNextWayPoint() {
     this.targetWayPointNumber++;
     this.targetWayPoint = this.waypointList[this.targetWayPointNumber];
-}
+  }
 
-killMe() {
+  killMe() {
     this.state = GameSettings.enemyState.dead;
     this.removeFromBoard();
-}
+  }
 
-// Controlling the enemy set mevements
-setMoving() {
+  // Controlling the enemy set mevement
+  setMoving() {
     this.targetWayPointNumber = 0;
     this.targetWayPoint = this.waypointList[this.targetWayPointNumber];
     this.lastWayPointIndex = this.waypointList.length - 1;
-    this.setPosition(this.targetWayPoint.point.x, this.targetWayPoint.point.y, false);
     this.addToBoard(false);
     this.targetWayPointNumber = 1;
     this.targetWayPoint = this.waypointList[this.targetWayPointNumber];
     this.state = GameSettings.enemyState.movingToWaypoint;
+    
+    this.setPosition(
+      this.targetWayPoint.point.x,
+      this.targetWayPoint.point.y,
+      false
+    );
+    
+  }
 }
 
+// Adding the collection of enemies
+class EnemyCollection {
+  constructor(player) {
+    this.listEnemies = [];
+    this.lastAdded = 0;
+    this.gameOver = false;
+    this.sequenceIndex = 0;
+    this.sequencesDone = false;
+    this.count = 0;
+    this.player = player;
+  }
+
+  killAll() {
+    for (let i = 0; i < this.listEnemies.length; ++i) {
+      this.listEnemies[i].killMe();
+    }
+  }
+
+  update(dt) {
+    this.lastAdded += dt;
+    if (
+      this.sequencesDone == false &&
+      EnemySequences[this.sequenceIndex].delayBefore < this.lastAdded
+    ) {
+      this.addEnemy();
+    }
+
+    for (let i = this.listEnemies.length - 1; i >= 0; --i) {
+      if (this.listEnemies[i].state == GameSettings.enemyState.dead) {
+        this.listEnemies.splice(i, 1);
+      } else {
+        this.listEnemies[i].update(dt);
+      }
+    }
+
+    this.checkGameOver();
+  }
+
+  checkGameOver() {
+    if (this.listEnemies.length == 0 && this.sequencesDone == true) {
+      this.gameOver = true;
+      console.log("game over");
+    }
+  }
+
+  // add a new enemy with throughout the sequence data
+  addEnemy() {
+    let seq = EnemySequences[this.sequenceIndex];
+    let en_new = new Enemy(
+      "en_" + this.count,
+      GameManager.assets[seq.image],
+      this.player,
+      seq
+    );
+    this.listEnemies.push(en_new);
+    en_new.setMoving();
+    this.count++;
+    this.sequenceIndex++;
+    this.lastAdded = 0;
+    if (this.sequenceIndex == EnemySequences.length) {
+      this.sequencesDone = true;
+      console.log("seuences done");
+    }
+  }
 }
 
 // Sequence of enemies spawning into the game that follow a set of waypoints across the screen
