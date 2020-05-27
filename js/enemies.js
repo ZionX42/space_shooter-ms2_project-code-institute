@@ -119,15 +119,13 @@ class EnemyCollection {
   // Reset the enemy collection for replay
   reset() {
     this.killAll();
-this.listEnemies = [];
-this.lastAdded = 0;
-this.gameOver = false;
-this.sequenceIndex = 0;
-this.sequencesDone = false;
-this.count = 0;
-}
-
-
+    this.listEnemies = [];
+    this.lastAdded = 0;
+    this.gameOver = false;
+    this.sequenceIndex = 0;
+    this.sequencesDone = false;
+    this.count = 0;
+  }
 
   killAll() {
     for (let i = 0; i < this.listEnemies.length; ++i) {
@@ -147,11 +145,26 @@ this.count = 0;
     for (let i = this.listEnemies.length - 1; i >= 0; --i) {
       if (this.listEnemies[i].state == GameSettings.enemyState.dead) {
         this.listEnemies.splice(i, 1);
-      } else if (this.listEnemies[i].state == GameSettings.enemyState.movingToWaypoint) {
-        let en = this.listEnemies [i];
-        
+      } else if (
+        this.listEnemies[i].state == GameSettings.enemyState.movingToWaypoint
+      ) {
+        let en = this.listEnemies[i];
+        for (let b = 0; b < this.bullets.listBullets.length; ++b) {
+          let bu = this.bullets.listBullets[b];
+          if (
+            bu.dead == false &&
+            bu.position.y > GameSettings.bulletTop &&
+            en.containingBox.IntersectedBy(bu.containingBox) == true
+          ) {
+            bu.killMe();
+            en.lives--;
+            if (en.lives <= 0) {
+              this.player.incrementScore(en.score);
+              en.killMe()
+            }
+          }
+        }
         en.update(dt);
-
       }
     }
 
