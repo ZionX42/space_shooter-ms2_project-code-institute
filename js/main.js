@@ -10,23 +10,22 @@ function tick() {
   GameManager.bullets.update(dt);
   GameManager.enemies.update(dt);
 
-  if(GameManager.enemies.gameOver == true) {
-    console.log('game over');
+  if (GameManager.enemies.gameOver == true) {
+    console.log("game over");
     showGameOver();
-} else {
+  } else {
     setTimeout(tick, GameSettings.targetFPS);
+  }
 }
 
-}
-
-// Displays Game Over & Reset message 
+// Displays Game Over & Reset message
 function showGameOver() {
   GameManager.phase = GameSettings.gameOver;
 
-  writeMessage('Game Over');
-  setTimeout(function() { appendMessage('Press Space To Reset'); }, 
-          GameSettings.pressSpaceDelay);
-
+  writeMessage("Game Over");
+  setTimeout(function () {
+    appendMessage("Press Space To Reset");
+  }, GameSettings.pressSpaceDelay);
 }
 
 // Ending the countdown text to start the game
@@ -81,11 +80,14 @@ function resetBullets() {
 
 // Resetting enemy after each game play
 function resetEnemies() {
-  if(GameManager.enemies != undefined) {
+  if (GameManager.enemies != undefined) {
     GameManager.enemies.reset();
-} else {
-    GameManager.enemies = new EnemyCollection(GameManager.player, GameManager.bullets);
-}
+  } else {
+    GameManager.enemies = new EnemyCollection(
+      GameManager.player,
+      GameManager.bullets
+    );
+  }
 }
 
 // Resetting player function
@@ -149,34 +151,34 @@ function processAsset(indexNum) {
 
 // Game setting for key controls & sequences
 $(function () {
-  console.log('ready..!');
+  console.log("ready..!");
   console.log("GameSettings:GameSettings", GameSettings);
   setUpSequences();
   $(document).keydown(function (e) {
-      if(GameManager.phase == GameSettings.gamePhase.readyToplay) {
-          if (e.which == GameSettings.keyPress.space) {
-              runCountDown();
-          }
-      } else if (GameManager.phase == GameSettings.gamePhase.playing) {
-          switch (e.which) {
-              case GameSettings.keyPress.up:
-                  GameManager.player.move(0, -1);
-                  break;
-              case GameSettings.keyPress.down:
-                  GameManager.player.move(0, 1);
-                  break;
-              case GameSettings.keyPress.left:
-                  GameManager.player.move(-1, 0);
-                  break;
-              case GameSettings.keyPress.right:
-                  GameManager.player.move(1, 0);
-                  break;
-          }
-      } else if(GameManager.phase == GameSettings.gameOver) {
-          if (e.which == GameSettings.keyPress.space) {
-              resetGame();
-          }
+    if (GameManager.phase == GameSettings.gamePhase.readyToplay) {
+      if (e.which == GameSettings.keyPress.space) {
+        runCountDown();
       }
+    } else if (GameManager.phase == GameSettings.gamePhase.playing) {
+      switch (e.which) {
+        case GameSettings.keyPress.up:
+          GameManager.player.move(0, -1);
+          break;
+        case GameSettings.keyPress.down:
+          GameManager.player.move(0, 1);
+          break;
+        case GameSettings.keyPress.left:
+          GameManager.player.move(-1, 0);
+          break;
+        case GameSettings.keyPress.right:
+          GameManager.player.move(1, 0);
+          break;
+      }
+    } else if (GameManager.phase == GameSettings.gameOver) {
+      if (e.which == GameSettings.keyPress.space) {
+        resetGame();
+      }
+    }
   });
   processAsset(0);
 });

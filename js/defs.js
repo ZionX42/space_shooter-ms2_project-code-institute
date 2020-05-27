@@ -88,35 +88,34 @@ const GameSettings = {
   },
 
   // Pixel count for directional movement
-  playerMoveStep: 8, 
-    enemyState: {
-        ready: 1,
-        dead: 0,
-        movingToWaypoint: 2
-    },
+  playerMoveStep: 8,
+  enemyState: {
+    ready: 1,
+    dead: 0,
+    movingToWaypoint: 2,
+  },
 
-    pressSpaceDelay: 3000,
+  pressSpaceDelay: 3000,
 
-    // Defining game start countdown and game over
-    gamePhase: {
-      readyToplay: 1,
-      countdownToStart: 2,
-      playing: 3,
-      gameOver: 4
+  // Defining game start countdown and game over
+  gamePhase: {
+    readyToplay: 1,
+    countdownToStart: 2,
+    playing: 3,
+    gameOver: 4,
   },
 
   // Countdown visualiser before starting the game
   countdownGap: 750,
-    countDownValues: ['2', '1', 'GO!']
+  countDownValues: ["2", "1", "GO!"],
 };
-
-
 
 //  Game Manager
 let GameManager = {
   assets: {},
   player: undefined,
   bullets: undefined,
+  phase: GameSettings.gamePhase.gameOver,
   lastUpdated: Date.now(),
   elapsedTime: 0,
   fps: 0,
