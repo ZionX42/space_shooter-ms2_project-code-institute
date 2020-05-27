@@ -1,4 +1,4 @@
-// Poistioning of the sprite & anchor
+// Positioning of the sprite & anchor
 class Sprite {
   constructor(divName, position, imgName, sizePx) {
     this.position = position;
@@ -6,6 +6,8 @@ class Sprite {
     this.imgName = imgName;
     this.size = sizePx;
     this.anchorShift = new Point(-this.size.width / 2, -this.size.height / 2);
+    this.containingBox = new Rect(this.position.x, this.position.y, 
+      this.size.width, this.size.height);
   }
 
   // Adding the player sprite to the game area in HTML

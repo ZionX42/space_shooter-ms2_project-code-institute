@@ -66,7 +66,8 @@ const GameSettings = {
   // Bullet spead
   bulletSpeed: 700 / 1000,
   bulletLife: 4000,
-  bulletFireRate: 2000,
+  bulletFireRate: 200,
+  bulletTop: 10,
 
   gameAreaWidth: 790,
   gameAreaHeight: 576,
@@ -95,7 +96,7 @@ const GameSettings = {
     },
 
     pressSpaceDelay: 3000,
-    
+
     // Defining game start countdown and game over
     gamePhase: {
       readyToplay: 1,

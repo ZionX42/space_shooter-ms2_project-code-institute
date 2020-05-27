@@ -105,7 +105,7 @@ class Enemy extends Sprite {
 
 // Adding the collection of enemies & how game is over
 class EnemyCollection {
-  constructor(player) {
+  constructor(player, bullets) {
     this.listEnemies = [];
     this.lastAdded = 0;
     this.gameOver = false;
@@ -113,7 +113,21 @@ class EnemyCollection {
     this.sequencesDone = false;
     this.count = 0;
     this.player = player;
+    this.bullets = bullets;
   }
+
+  // Reset the enemy collection for replay
+  reset() {
+    this.killAll();
+this.listEnemies = [];
+this.lastAdded = 0;
+this.gameOver = false;
+this.sequenceIndex = 0;
+this.sequencesDone = false;
+this.count = 0;
+}
+
+
 
   killAll() {
     for (let i = 0; i < this.listEnemies.length; ++i) {
@@ -133,8 +147,11 @@ class EnemyCollection {
     for (let i = this.listEnemies.length - 1; i >= 0; --i) {
       if (this.listEnemies[i].state == GameSettings.enemyState.dead) {
         this.listEnemies.splice(i, 1);
-      } else {
-        this.listEnemies[i].update(dt);
+      } else if (this.listEnemies[i].state == GameSettings.enemyState.movingToWaypoint) {
+        let en = this.listEnemies [i];
+        
+        en.update(dt);
+
       }
     }
 
