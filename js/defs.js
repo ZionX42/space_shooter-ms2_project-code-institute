@@ -94,6 +94,8 @@ const GameSettings = {
         movingToWaypoint: 2
     },
 
+    pressSpaceDelay: 3000,
+    
     // Defining game start countdown and game over
     gamePhase: {
       readyToplay: 1,

@@ -35,3 +35,16 @@ body {
   position: absolute;
   z-index: 10;
 }
+
+#messageContainer {
+	position: absolute;
+	top: 200px;
+	text-align: center;
+	width: 100%;
+	z-index: 40;
+}
+
+.message {
+	font-size: 3em;
+	padding: 20px;
+}

@@ -10,7 +10,64 @@ function tick() {
   GameManager.bullets.update(dt);
   GameManager.enemies.update(dt);
 
+  if(GameManager.enemies.gameOver == true) {
+    console.log('game over');
+    showGameOver();
+} else {
+    setTimeout(tick, GameSettings.targetFPS);
+}
+
+}
+
+// Displays Game Over & Reset message 
+function showGameOver() {
+  GameManager.phase = GameSettings.gameOver;
+
+  writeMessage('Game Over');
+  setTimeout(function() { appendMessage('Press Space To Reset'); }, 
+          GameSettings.pressSpaceDelay);
+
+}
+
+// Ending the countdown text to start the game
+function endCountDown() {
+  clearMessages();
+  GameManager.phase = GameSettings.gamePhase.playing;
+  GameManager.lastUpdated = Date.now();
   setTimeout(tick, GameSettings.targetFPS);
+}
+
+// Runs the countdown to start the game
+function runCountDown() {
+  GameManager.phase = GameSettings.gamePhase.countdownToStart;
+  writeMessage(3);
+  for (let i = 0; i < GameSettings.countDownValues.length; ++i) {
+    setTimeout(
+      writeMessage,
+      GameSettings.countdownGap * (i + 1),
+      GameSettings.countDownValues[i]
+    );
+  }
+  setTimeout(
+    endCountDown,
+    (GameSettings.countDownValues.length + 1) * GameSettings.countdownGap
+  );
+}
+
+// Writes the messages on the screen
+function writeMessage(text) {
+  clearMessages();
+  appendMessage(text);
+}
+
+// Appends & refreshes messages to the screen through div
+function appendMessage(text) {
+  $("#messageContainer").append('<div class="message">' + text + "</div>");
+}
+
+// Removes any div messages on screen
+function clearMessages() {
+  $("#messageContainer").empty();
 }
 
 // Reseting bullet function to allow right direction
@@ -62,7 +119,7 @@ function resetGame() {
   resetPlayer();
   resetBullets();
   resetEnemies();
-  setTimeout(tick, GameSettings.targetFPS);
+  runCountDown();
 }
 
 function processAsset(indexNum) {
@@ -88,7 +145,6 @@ function processAsset(indexNum) {
 
 // Game setting for controls & sequences
 $(function () {
-  
   setUpSequences();
   $(document).keydown(function (e) {
     switch (e.which) {
