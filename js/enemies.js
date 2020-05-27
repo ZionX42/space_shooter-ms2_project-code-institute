@@ -91,21 +91,19 @@ class Enemy extends Sprite {
     this.targetWayPointNumber = 0;
     this.targetWayPoint = this.waypointList[this.targetWayPointNumber];
     this.lastWayPointIndex = this.waypointList.length - 1;
-    this.addToBoard(false);
-    this.targetWayPointNumber = 1;
-    this.targetWayPoint = this.waypointList[this.targetWayPointNumber];
-    this.state = GameSettings.enemyState.movingToWaypoint;
-    
     this.setPosition(
       this.targetWayPoint.point.x,
       this.targetWayPoint.point.y,
       false
     );
-    
+    this.addToBoard(false);
+    this.targetWayPointNumber = 1;
+    this.targetWayPoint = this.waypointList[this.targetWayPointNumber];
+    this.state = GameSettings.enemyState.movingToWaypoint;
   }
 }
 
-// Adding the collection of enemies
+// Adding the collection of enemies & how game is over
 class EnemyCollection {
   constructor(player) {
     this.listEnemies = [];
@@ -166,7 +164,7 @@ class EnemyCollection {
     this.lastAdded = 0;
     if (this.sequenceIndex == EnemySequences.length) {
       this.sequencesDone = true;
-      console.log("seuences done");
+      console.log("Sequences done");
     }
   }
 }

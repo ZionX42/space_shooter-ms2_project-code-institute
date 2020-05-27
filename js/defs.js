@@ -87,7 +87,12 @@ const GameSettings = {
   },
 
   // Pixel count for directional movement
-  playerMoveStep: 8,
+  playerMoveStep: 8, 
+    enemyState: {
+        ready: 1,
+        dead: 0,
+        movingToWaypoint: 2
+    }
 };
 
 //  Game Manager

@@ -8,6 +8,7 @@ function tick() {
   $("#FPS").text("FPS: " + GameManager.fps);
 
   GameManager.bullets.update(dt);
+  GameManager.enemies.update(dt);
 
   setTimeout(tick, GameSettings.targetFPS);
 }
@@ -19,6 +20,11 @@ function resetBullets() {
   } else {
     GameManager.bullets = new BulletCollection(GameManager.player);
   }
+}
+
+// Resetting enemy after each game play
+function resetEnemies() {
+  GameManager.enemies = new EnemyCollection(GameManager.player);
 }
 
 // Resetting player function
@@ -55,6 +61,7 @@ function resetGame() {
   console.log("Main Game init()");
   resetPlayer();
   resetBullets();
+  resetEnemies();
   setTimeout(tick, GameSettings.targetFPS);
 }
 
