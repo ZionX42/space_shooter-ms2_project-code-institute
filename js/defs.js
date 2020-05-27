@@ -92,8 +92,22 @@ const GameSettings = {
         ready: 1,
         dead: 0,
         movingToWaypoint: 2
-    }
+    },
+
+    // Defining game start countdown and game over
+    gamePhase: {
+      readyToplay: 1,
+      countdownToStart: 2,
+      playing: 3,
+      gameOver: 4
+  },
+
+  // Countdown visualiser before starting the game
+  countdownGap: 750,
+    countDownValues: ['2', '1', 'GO!']
 };
+
+
 
 //  Game Manager
 let GameManager = {
