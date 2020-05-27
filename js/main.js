@@ -143,26 +143,36 @@ function processAsset(indexNum) {
   };
 }
 
-// Game setting for controls & sequences
+// Game setting for key controls & sequences
 $(function () {
+  console.log('ready..!');
+  console.log("GameSettings:GameSettings", GameSettings);
   setUpSequences();
   $(document).keydown(function (e) {
-    switch (e.which) {
-      case GameSettings.keyPress.up:
-        GameManager.player.move(0, -1);
-        break;
-      case GameSettings.keyPress.down:
-        GameManager.player.move(0, 1);
-        break;
-      case GameSettings.keyPress.left:
-        GameManager.player.move(-1, 0);
-        break;
-      case GameSettings.keyPress.right:
-        GameManager.player.move(1, 0);
-        break;
-      case GameSettings.keyPress.space:
-        break;
-    }
+      if(GameManager.phase == GameSettings.gamePhase.readyToplay) {
+          if (e.which == GameSettings.keyPress.space) {
+              runCountDown();
+          }
+      } else if (GameManager.phase == GameSettings.gamePhase.playing) {
+          switch (e.which) {
+              case GameSettings.keyPress.up:
+                  GameManager.player.move(0, -1);
+                  break;
+              case GameSettings.keyPress.down:
+                  GameManager.player.move(0, 1);
+                  break;
+              case GameSettings.keyPress.left:
+                  GameManager.player.move(-1, 0);
+                  break;
+              case GameSettings.keyPress.right:
+                  GameManager.player.move(1, 0);
+                  break;
+          }
+      } else if(GameManager.phase == GameSettings.gameOver) {
+          if (e.which == GameSettings.keyPress.space) {
+              resetGame();
+          }
+      }
   });
   processAsset(0);
 });
