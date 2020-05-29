@@ -39,7 +39,18 @@ class Enemy extends Sprite {
     switch (this.state) {
       case GameSettings.enemyState.movingToWaypoint:
         this.moveTowardPoint(dt);
+        this.checkplayerCollision();
         break;
+    }
+  }
+
+  // Function that checks when enemy collides with a player
+  checkplayerCollision() {
+    if (this.containingBox.IntersectedBy(this.player.containingBox) == true) {
+      if (this.player.hit == false) {
+        this.player.hit = true;
+        console.log("collision with player");
+      }
     }
   }
 
@@ -160,7 +171,7 @@ class EnemyCollection {
             en.lives--;
             if (en.lives <= 0) {
               this.player.incrementScore(en.score);
-              en.killMe()
+              en.killMe();
             }
           }
         }

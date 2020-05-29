@@ -10,6 +10,7 @@ class Player extends Sprite {
     this.lives = GameSettings.playerStartLives;
     this.score = 0;
     this.highScore = 0;
+    this.hit = false;
     this.state = GameSettings.playerState.ok;
     this.boundaryRect = boundaryRect;
     this.boundaryRect.shift(this.anchorShift.x, this.anchorShift.y);
@@ -18,6 +19,7 @@ class Player extends Sprite {
   reset() {
     this.state = GameSettings.playerState.ok;
     this.score = 0;
+    this.hit = false;
     this.lives = GameSettings.playerStartLives;
     this.setLives();
     this.setScore();

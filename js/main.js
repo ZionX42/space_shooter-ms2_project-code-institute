@@ -125,7 +125,11 @@ function resetGame() {
   resetPlayer();
   resetBullets();
   resetEnemies();
-  runCountDown();
+  GameManager.phase = GameSettings.gamePhase.readyToplay;
+  GameManager.lastUpdated = Date.now();
+  GameManager.elapsedTime = 0;
+
+  writeMessage("Press Space To Start");
 }
 
 function processAsset(indexNum) {
