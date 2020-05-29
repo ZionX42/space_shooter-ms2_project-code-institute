@@ -7,7 +7,6 @@ function tick() {
 
   $("#FPS").text("FPS: " + GameManager.fps);
 
- 
   GameManager.enemies.update(dt);
 
   if (GameManager.enemies.gameOver == true) {
@@ -15,7 +14,12 @@ function tick() {
     showGameOver();
   } else {
     GameManager.bullets.update(dt);
-    setTimeout(tick, GameSettings.targetFPS);
+    GameManager.player.update(dt);
+    if (GameManager.player.lives <= 0) {
+      console.log("game over");
+      showGameOver();
+    } else if (GameManager.phase == GameManager.GameSettings.gamePhase.playing)
+      setTimeout(tick, GameSettings.targetFPS);
   }
 }
 
@@ -104,8 +108,8 @@ function resetPlayer() {
       new Rect(
         40,
         40,
-        GameSettings.playAreaWidth - 80,
-        GameSettings.playAreaHeight - 80
+        GameSettings.gameAreaWidth - 80,
+        GameSettings.gameAreaHeight - 80
       )
     );
     GameManager.player.addToBoard(true);

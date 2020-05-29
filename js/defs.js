@@ -75,6 +75,8 @@ const GameSettings = {
 
   // Number of player flashing one hit by enemy
   playerFlashOpacity: "0.5",
+  playerFlashTime: 300,
+    playerFlashes: 8,
 
   playerDivName: "playerSprite",
   playerStart: {
