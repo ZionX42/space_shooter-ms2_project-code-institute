@@ -73,6 +73,9 @@ const GameSettings = {
   gameAreaHeight: 576,
   gameAreaDiv: "#gameArea",
 
+  // Number of player flashing one hit by enemy
+  playerFlashOpacity: "0.5",
+
   playerDivName: "playerSprite",
   playerStart: {
     x: 360,

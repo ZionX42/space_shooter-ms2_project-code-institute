@@ -20,6 +20,7 @@ class Player extends Sprite {
     this.state = GameSettings.playerState.ok;
     this.score = 0;
     this.hit = false;
+    this.lasthit = 0;
     this.lives = GameSettings.playerStartLives;
     this.setLives();
     this.setScore();
@@ -30,6 +31,34 @@ class Player extends Sprite {
       true
     );
   }
+
+  update(dt) {
+
+    switch(this.state) {
+      case GameSettings.playerState.hitFlashing:
+          this.lasthit += dt;
+          if (this.lasthit > 2000) {
+              console.log('player back!!');
+              this.lasthit = 0;
+              this.state = GameSettings.playerState.ok;
+              this.hit = false;
+              $('#' + this.divName).css({'opacity' : '1.0'});
+          }
+      break;
+  }
+
+    if (this.hit == true && this.state != GameSettings.playerState.hitFlashing) {
+      this.state = GameSettings.playerState.hitFlashing;
+      this.lasthit = 0;
+      this.lives--;
+      this.setLives();
+      console.log('player hit!!');
+      if (this.lives > 0) {
+          $('#' + this.divName).css({'opacity' : GameSettings.playerFlashOpacity});
+      }
+  }
+  }
+
 
   // Player direction movement function
   move(x, y) {

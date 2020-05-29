@@ -7,13 +7,14 @@ function tick() {
 
   $("#FPS").text("FPS: " + GameManager.fps);
 
-  GameManager.bullets.update(dt);
+ 
   GameManager.enemies.update(dt);
 
   if (GameManager.enemies.gameOver == true) {
     console.log("game over");
     showGameOver();
   } else {
+    GameManager.bullets.update(dt);
     setTimeout(tick, GameSettings.targetFPS);
   }
 }
