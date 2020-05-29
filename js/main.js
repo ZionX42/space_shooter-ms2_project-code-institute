@@ -23,9 +23,19 @@ function tick() {
   }
 }
 
+// Clears objects with timeouts, e.g. scrolling stars
+function clearTimeouts() {
+  for (let i = 0; i < GameManager.timeouts.length; ++i) {
+      clearTimeout(GameManager.timeouts[i]);
+  }
+  GameManager.timeouts = [];
+}
+
 // Displays Game Over & Reset message
 function showGameOver() {
   GameManager.phase = GameSettings.gameOver;
+  pauseStars();
+  clearTimeouts();
 
   writeMessage("Game Over");
   setTimeout(function () {
@@ -43,6 +53,7 @@ function endCountDown() {
 
 // Runs the countdown to start the game
 function runCountDown() {
+  createStars();  
   GameManager.phase = GameSettings.gamePhase.countdownToStart;
   writeMessage(3);
   for (let i = 0; i < GameSettings.countDownValues.length; ++i) {
@@ -127,6 +138,8 @@ function resetPlayer() {
 // Images & game loading
 function resetGame() {
   console.log("Main Game init()");
+  clearTimeouts();
+  removeStars();
   resetPlayer();
   resetBullets();
   resetEnemies();
