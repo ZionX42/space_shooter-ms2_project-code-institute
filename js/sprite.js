@@ -6,8 +6,12 @@ class Sprite {
     this.imgName = imgName;
     this.size = sizePx;
     this.anchorShift = new Point(-this.size.width / 2, -this.size.height / 2);
-    this.containingBox = new Rect(this.position.x, this.position.y, 
-      this.size.width, this.size.height);
+    this.containingBox = new Rect(
+      this.position.x,
+      this.position.y,
+      this.size.width,
+      this.size.height
+    );
   }
 
   // Adding the player sprite to the game area in HTML
@@ -16,8 +20,8 @@ class Sprite {
     div.classList.add("sprite");
     div.id = this.divName;
     div.style.backgroundImage = "url('" + this.imgName + "')";
-    div.style.width = this.size.width + 'px';
-    div.style.height = this.size.height + 'px';
+    div.style.width = this.size.width + "px";
+    div.style.height = this.size.height + "px";
     $(GameSettings.gameAreaDiv).append(div);
 
     this.setPosition(this.position.x, this.position.y, shift);
@@ -30,14 +34,15 @@ class Sprite {
 
   draw() {
     $("#" + this.divName).css({
-      "left": this.position.x,
-      "top": this.position.y,
+      left: this.position.x,
+      top: this.position.y,
     });
   }
 
   // Anchor position
   setPosition(x, y, shift) {
     this.position.update(x, y);
+    this.containingBox.update(this.position.x, this.position.y);
     if (shift == true) {
       this.incrementPosition(this.anchorShift.x, this.anchorShift.y);
     }
@@ -46,11 +51,13 @@ class Sprite {
 
   updatePosition(x, y) {
     this.position.update(x, y);
+    this.containingBox.update(this.position.x, this.position.y);
     this.draw();
   }
 
   incrementPosition(ix, iy) {
     this.position.increment(ix, iy);
+    this.containingBox.update(this.position.x, this.position.y);
     this.draw();
   }
 }

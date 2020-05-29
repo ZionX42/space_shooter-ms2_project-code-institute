@@ -18,7 +18,7 @@ function tick() {
     if (GameManager.player.lives <= 0) {
       console.log("game over");
       showGameOver();
-    } else if (GameManager.phase == GameManager.GameSettings.gamePhase.playing)
+    } else if (GameManager.phase == GameSettings.gamePhase.playing)
       setTimeout(tick, GameSettings.targetFPS);
   }
 }

@@ -1,3 +1,4 @@
+// Defining the point of contact for player & enemies
 class Point {
     constructor(x, y) {
         this.x = x;
@@ -20,5 +21,5 @@ class Point {
         }
         return false;
     }
-    
+
 }

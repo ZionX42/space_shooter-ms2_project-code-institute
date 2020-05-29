@@ -54,7 +54,7 @@ body {
   left: 0px;
   background-color: white;
   border-radius: 50%;
-  animation-name: moveX;
+  animation-name: starX;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -82,7 +82,7 @@ body {
   animation-duration: 3s;  
 }
 
-@keyframes moveX {
+@keyframes starX {
   from {
     transform: translateX(100vw);
   }
