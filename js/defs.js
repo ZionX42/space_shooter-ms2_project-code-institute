@@ -3,6 +3,7 @@ const ImageFiles = [
   "rick_spacecraft",
   "bullets/pickledRick",
   "enemies/jerryHead",
+  "explosion/smallexplode",
 ];
 
 // Way Points for the enemy movements & starting points
@@ -113,6 +114,7 @@ const GameSettings = {
   // Countdown visualiser before starting the game
   countdownGap: 750,
   countDownValues: ["2", "1", "GO!"],
+  explosionTimeout: 1000
 };
 
 //  Game Manager
@@ -120,6 +122,7 @@ let GameManager = {
   assets: {},
   player: undefined,
   bullets: undefined,
+  explosions: undefined,
   timeouts: [],
   phase: GameSettings.gamePhase.gameOver,
   lastUpdated: Date.now(),

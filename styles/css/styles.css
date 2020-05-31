@@ -37,16 +37,16 @@ body {
 }
 
 #messageContainer {
-	position: absolute;
-	top: 200px;
-	text-align: center;
-	width: 100%;
-	z-index: 40;
+  position: absolute;
+  top: 200px;
+  text-align: center;
+  width: 100%;
+  z-index: 40;
 }
 
 .message {
-	font-size: 3em;
-	padding: 20px;
+  font-size: 3em;
+  padding: 20px;
 }
 
 .star {
@@ -71,7 +71,7 @@ body {
   top: 50px;
   width: 4px;
   height: 4px;
-  animation-duration: 4s;  
+  animation-duration: 4s;
 }
 
 .starBig {
@@ -79,7 +79,7 @@ body {
   top: 100px;
   width: 5px;
   height: 5px;
-  animation-duration: 3s;  
+  animation-duration: 3s;
 }
 
 @keyframes starX {
@@ -89,4 +89,22 @@ body {
   to {
     transform: translateX(-30px);
   }
+}
+
+@keyframes explosion {
+  100% {
+    background-image: url("/assets/explosion/smallexplode.gif");
+  }
+}
+
+.explosion {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 500px;
+  top: 300px;
+  animation-name: explosion;
+  /* animation-duration: 0.8s; */
+  background-repeat: no-repeat;
+  z-index: 20;
 }
