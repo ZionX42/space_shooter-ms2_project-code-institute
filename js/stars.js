@@ -1,3 +1,4 @@
+// Adding the Stars scrolling to the game background
 function GetRandInt(from, range) {
     return Math.floor(Math.random() * range) + from;
 }
@@ -15,7 +16,7 @@ function pauseStars() {
 function addStar(starClass) {
     let div = document.createElement("div");
     div.classList.add("star", starClass);
-    div.style.left = GetRandInt(0, 790) + "px";
+    div.style.left = GetRandInt(576, 0) + "px";
     $(GameSettings.playAreaDiv).append(div);
 }
 

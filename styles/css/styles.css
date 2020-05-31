@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(37, 37, 37);
+  background-color: rgb(3, 3, 3);
   font-family: Impact, Charcoal, sans-serif;
   color: white;
 }
@@ -59,22 +59,22 @@ body {
   animation-timing-function: linear;
 }
 
-.small {
+.starSmall {
   top: 10px;
   width: 3px;
   height: 3px;
-  animation-duration: 5s;  
   background-color: gray;
+  animation-duration: 5s;
 }
 
-.medium {
+.starMedium {
   top: 50px;
   width: 4px;
   height: 4px;
   animation-duration: 4s;  
 }
 
-.big {
+.starBig {
   left: 0px;
   top: 100px;
   width: 5px;
@@ -84,9 +84,9 @@ body {
 
 @keyframes starX {
   from {
-    transform: translateX(100vw);
+    transform: translateX(600px);
   }
   to {
-    transform: translateX(-200px);
+    transform: translateX(-30px);
   }
 }
