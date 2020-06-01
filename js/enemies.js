@@ -217,12 +217,12 @@ class EnemyCollection {
 // Sequence of enemies spawning into the game that follow a set of waypoints across the screen
 function addEnemySequence(
   delayBefore,
+  delayBetween,
   image,
   score,
   lives,
   speed,
   number,
-  delayBetween,
   waypoints
 ) {
   for (let i = 0; i < number; ++i) {
@@ -294,7 +294,7 @@ function setUpSequences() {
   );
   createSequence(
     600,
-    "enemies/jerryHead",
+    "enemies/jerryHead1",
     1,
     AttackBlocks.STREAMDOWNMIXED,
     100,
@@ -304,7 +304,7 @@ function setUpSequences() {
   );
   createSequence(
     600,
-    "enemies/jerryHead",
+    "enemies/jerryHead2",
     1,
     AttackBlocks.STREAMRETURNMIXED,
     100,
@@ -334,7 +334,7 @@ function setUpSequences() {
   );
   createSequence(
     600,
-    "enemies/jerryHead",
+    "enemies/jerryHead2",
     1,
     AttackBlocks.SIDEASSAULT1,
     100,
@@ -344,7 +344,7 @@ function setUpSequences() {
   );
   createSequence(
     600,
-    "enemies/jerryHead",
+    "enemies/jerryHead3",
     1,
     AttackBlocks.SIDEASSAULT2,
     100,
@@ -354,7 +354,7 @@ function setUpSequences() {
   );
   createSequence(
     600,
-    "enemies/jerryHead",
+    "enemies/jerryHead1",
     2,
     AttackBlocks.SIDEASSAULT3,
     100,
@@ -374,7 +374,7 @@ function setUpSequences() {
   );
   createSequence(
     600,
-    "enemies/jerryHead",
+    "enemies/jerryHead2",
     4,
     AttackBlocks.SIDEASSAULT2,
     100,
@@ -382,7 +382,16 @@ function setUpSequences() {
     enemySpeed.medium,
     2000
   );
-  // createSequence(600,'Enemies/enemyGreen2', 4,  AttackBlocks.SIDEASSAULT3, 100, 1, enemySpeed.medium, 2000);
+  createSequence(
+    600,
+    "enemies/jerryHead1",
+    4,
+    AttackBlocks.SIDEASSAULT3,
+    100,
+    1,
+    enemySpeed.medium,
+    2000
+  );
   createSequence(
     600,
     "Enemies/destroy",
@@ -393,8 +402,35 @@ function setUpSequences() {
     enemySpeed.slow,
     500
   );
-  // createSequence(600,'enemies/jerryHead', 2,  AttackBlocks.STREAMDOWN, 100, 1, enemySpeed.fast, 2000);
-  // createSequence(600,'enemies/jerryHead', 2,  AttackBlocks.STREAMDOWNMIXED, 100, 1, enemySpeed.fast, 2000);
-  // createSequence(600,'enemies/jerryHead', 4,  AttackBlocks.STREAMRETURNMIXED, 100, 1, enemySpeed.medium, 2000);
+  createSequence(
+    600,
+    "enemies/jerryHead3",
+    2,
+    AttackBlocks.STREAMDOWN,
+    100,
+    1,
+    enemySpeed.fast,
+    2000
+  );
+  createSequence(
+    600,
+    "enemies/jerryHead1",
+    2,
+    AttackBlocks.STREAMDOWNMIXED,
+    100,
+    1,
+    enemySpeed.fast,
+    2000
+  );
+  createSequence(
+    600,
+    "enemies/jerryHead",
+    4,
+    AttackBlocks.STREAMRETURNMIXED,
+    100,
+    1,
+    enemySpeed.medium,
+    2000
+  );
   console.log("EnemySequences:", EnemySequences);
 }
