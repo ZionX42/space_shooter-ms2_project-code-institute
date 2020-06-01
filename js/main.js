@@ -27,7 +27,7 @@ function tick() {
 // Clears objects with timeouts, e.g. scrolling stars
 function clearTimeouts() {
   for (let i = 0; i < GameManager.timeouts.length; ++i) {
-      clearTimeout(GameManager.timeouts[i]);
+    clearTimeout(GameManager.timeouts[i]);
   }
   GameManager.timeouts = [];
 }
@@ -38,6 +38,12 @@ function showGameOver() {
   pauseStars();
   clearTimeouts();
 
+  if (GameManager.enemies.gameOver == true) {
+    playSound("completed");
+  } else {
+    playSound("gameover");
+  }
+
   writeMessage("Game Over");
   setTimeout(function () {
     appendMessage("Press Space To Reset");
@@ -47,16 +53,24 @@ function showGameOver() {
 // Ending the countdown text to start the game
 function endCountDown() {
   clearMessages();
+  playSound("go");
   GameManager.phase = GameSettings.gamePhase.playing;
   GameManager.lastUpdated = Date.now();
   setTimeout(tick, GameSettings.targetFPS);
 }
 
+// Play countdown sound function
+function setCountDownValue(val) {
+  playSound("countdown");
+  writeMessage(val);
+}
+
 // Runs the countdown to start the game
 function runCountDown() {
-  createStars();  
+  createStars();
   GameManager.phase = GameSettings.gamePhase.countdownToStart;
   writeMessage(3);
+  playSound("countdown");
   for (let i = 0; i < GameSettings.countDownValues.length; ++i) {
     setTimeout(
       writeMessage,
