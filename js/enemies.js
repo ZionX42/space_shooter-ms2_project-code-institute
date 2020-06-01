@@ -116,7 +116,7 @@ class Enemy extends Sprite {
 
 // Adding the collection of enemies & how game is over
 class EnemyCollection {
-  constructor(player, bullets) {
+  constructor(player, bullets, explosions) {
     this.listEnemies = [];
     this.lastAdded = 0;
     this.gameOver = false;
@@ -125,6 +125,7 @@ class EnemyCollection {
     this.count = 0;
     this.player = player;
     this.bullets = bullets;
+    this.explosions = explosions;
   }
 
   // Reset the enemy collection for replay
@@ -172,6 +173,8 @@ class EnemyCollection {
             if (en.lives <= 0) {
               this.player.incrementScore(en.score);
               en.killMe();
+              let cp = en.getCenterPoint();
+              this.explosions.createExplosion( new Point(cp.x, cp.y));
             }
           }
         }

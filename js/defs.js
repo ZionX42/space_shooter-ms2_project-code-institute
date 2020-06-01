@@ -3,7 +3,15 @@ const ImageFiles = [
   "rick_spacecraft",
   "bullets/pickledRick",
   "enemies/jerryHead",
-  "explosion/smallexplode",
+  "explosion/smallexplode1",
+  "explosion/smallexplode2",
+  "explosion/smallexplode3",
+  "explosion/smallexplode4",
+  "explosion/smallexplode5",
+  "explosion/smallexplode6",
+  "explosion/smallexplode7",
+  "explosion/smallexplode8",
+  "explosion/smallexplode9",
 ];
 
 // Way Points for the enemy movements & starting points
@@ -77,7 +85,7 @@ const GameSettings = {
   // Number of player flashing one hit by enemy
   playerFlashOpacity: "0.5",
   playerFlashTime: 300,
-    playerFlashes: 8,
+  playerFlashes: 8,
 
   playerDivName: "playerSprite",
   playerStart: {
@@ -114,7 +122,7 @@ const GameSettings = {
   // Countdown visualiser before starting the game
   countdownGap: 750,
   countDownValues: ["2", "1", "GO!"],
-  explosionTimeout: 1000
+  explosionTimeout: 1000,
 };
 
 //  Game Manager

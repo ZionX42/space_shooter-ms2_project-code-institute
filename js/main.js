@@ -85,6 +85,11 @@ function clearMessages() {
   $("#messageContainer").empty();
 }
 
+// Resets the explosion function once the enemy is shot
+function resetExplosions() {
+  GameManager.explosions = new Explosions("explosion/smallexplode1");
+}
+
 // Reseting bullet function to allow right direction
 function resetBullets() {
   if (GameManager.bullets != undefined) {
@@ -101,7 +106,8 @@ function resetEnemies() {
   } else {
     GameManager.enemies = new EnemyCollection(
       GameManager.player,
-      GameManager.bullets
+      GameManager.bullets,
+      GameManager.explosions
     );
   }
 }
@@ -142,6 +148,7 @@ function resetGame() {
   removeStars();
   resetPlayer();
   resetBullets();
+  resetExplosions();
   resetEnemies();
   GameManager.phase = GameSettings.gamePhase.readyToplay;
   GameManager.lastUpdated = Date.now();
