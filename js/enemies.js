@@ -175,7 +175,7 @@ class EnemyCollection {
               this.player.incrementScore(en.score);
               en.killMe();
               let cp = en.getCenterPoint();
-              this.explosions.createExplosion( new Point(cp.x, cp.y));
+              this.explosions.createExplosion(new Point(cp.x, cp.y));
             }
           }
         }
@@ -241,27 +241,160 @@ function addEnemySequence(
   }
 }
 
+// Creates attack requenses using the attack blocks functions
+function createSequence(
+  delayBetween,
+  image,
+  number,
+  attackBlock,
+  score,
+  lives,
+  speed,
+  delayBefore
+) {
+  for (let i = 0; i < attackBlock.length; ++i) {
+    let delay = delayBetween;
+    if (i == 0) {
+      delay = delayBefore;
+    }
+    console.log(
+      "adding sequence between:",
+      delayBetween,
+      " before: ",
+      delayBefore,
+      " delay:",
+      delay,
+      " block:",
+      attackBlock
+    );
+    addEnemySequence(
+      delay,
+      delayBetween,
+      image,
+      score,
+      lives,
+      speed,
+      number,
+      attackBlock[i]
+    );
+  }
+}
+
 // Function that adds the enemy calls/spawning to sequence
 function setUpSequences() {
-  addEnemySequence(
-    2000,
+  createSequence(
+    600,
     "enemies/jerryHead",
+    1,
+    AttackBlocks.STREAMDOWN,
     100,
     1,
-    200 / 1000,
+    enemySpeed.medium,
+    1000
+  );
+  createSequence(
+    600,
+    "enemies/jerryHead",
+    1,
+    AttackBlocks.STREAMDOWNMIXED,
+    100,
+    1,
+    enemySpeed.medium,
+    2000
+  );
+  createSequence(
+    600,
+    "enemies/jerryHead",
+    1,
+    AttackBlocks.STREAMRETURNMIXED,
+    100,
+    1,
+    enemySpeed.medium,
+    2000
+  );
+  createSequence(
+    600,
+    "Enemies/destroy",
+    1,
+    AttackBlocks.BADDIETYPE1,
+    500,
+    8,
+    enemySpeed.slow,
+    500
+  );
+  createSequence(
+    600,
+    "enemies/jerryHead",
     2,
-    800,
-    WayPoints["LEFTTORIGHTSHALLOW"]
-  );
-  addEnemySequence(
-    4000,
-    "enemies/jerryHead",
+    AttackBlocks.STREAMUPMIXED,
     100,
     1,
-    400 / 1000,
-    6,
-    400,
-    WayPoints["STREAMFROMB180"]
+    enemySpeed.fast,
+    7000
   );
-  console.log(EnemySequences);
+  createSequence(
+    600,
+    "enemies/jerryHead",
+    1,
+    AttackBlocks.SIDEASSAULT1,
+    100,
+    1,
+    enemySpeed.fast,
+    3000
+  );
+  createSequence(
+    600,
+    "enemies/jerryHead",
+    1,
+    AttackBlocks.SIDEASSAULT2,
+    100,
+    1,
+    enemySpeed.fast,
+    3000
+  );
+  createSequence(
+    600,
+    "enemies/jerryHead",
+    2,
+    AttackBlocks.SIDEASSAULT3,
+    100,
+    1,
+    enemySpeed.fast,
+    2000
+  );
+  createSequence(
+    600,
+    "enemies/jerryHead",
+    2,
+    AttackBlocks.SIDEASSAULT4,
+    100,
+    1,
+    enemySpeed.fast,
+    2000
+  );
+  createSequence(
+    600,
+    "enemies/jerryHead",
+    4,
+    AttackBlocks.SIDEASSAULT2,
+    100,
+    1,
+    enemySpeed.medium,
+    2000
+  );
+  // createSequence(600,'Enemies/enemyGreen2', 4,  AttackBlocks.SIDEASSAULT3, 100, 1, enemySpeed.medium, 2000);
+  createSequence(
+    600,
+    "Enemies/destroy",
+    1,
+    AttackBlocks.BADDIETYPE2,
+    500,
+    8,
+    enemySpeed.slow,
+    500
+  );
+  // createSequence(600,'enemies/jerryHead', 2,  AttackBlocks.STREAMDOWN, 100, 1, enemySpeed.fast, 2000);
+  // createSequence(600,'enemies/jerryHead', 2,  AttackBlocks.STREAMDOWNMIXED, 100, 1, enemySpeed.fast, 2000);
+  // createSequence(600,'enemies/jerryHead', 4,  AttackBlocks.STREAMRETURNMIXED, 100, 1, enemySpeed.medium, 2000);
+  console.log("EnemySequences:", EnemySequences);
 }
