@@ -18,8 +18,9 @@ function tick() {
     if (GameManager.player.lives <= 0) {
       console.log("game over");
       showGameOver();
-    } else if (GameManager.phase == GameSettings.gamePhase.playing)
+    } else if (GameManager.phase == GameSettings.gamePhase.playing) {
       setTimeout(tick, GameSettings.targetFPS);
+    }
   }
 }
 
@@ -114,6 +115,8 @@ function resetEnemies() {
 
 // Resetting player function
 function resetPlayer() {
+  console.log("resetplayer()");
+  console.log("resetplayer() GameManager.player:", GameManager.player);
   if (GameManager.player == undefined) {
     console.log("resetPlayer() making new");
     let asset = GameManager.assets["rick_spacecraft"];
