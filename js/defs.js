@@ -14,6 +14,21 @@ const ImageFiles = [
   "explosion/smallexplode9",
 ];
 
+const ImagePath = [ "assets/explosion", "assets/bullets", "assets/enemies"];
+
+// Sounds definition reference
+const soundFiles = [
+  "countdown",
+  "explosion",
+  "go",
+  "loselife",
+  "gameover",
+  "completed",
+  "shoot_laser1",
+  "death",
+];
+const soundPath = "assets/Sounds/";
+
 // Way Points for the enemy movements & starting points
 const WayPoints = {
   LEFTTORIGHTSHALLOW: [
