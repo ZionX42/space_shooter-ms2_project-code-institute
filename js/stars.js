@@ -16,8 +16,8 @@ function pauseStars() {
 function addStar(starClass) {
     let div = document.createElement("div");
     div.classList.add("star", starClass);
-    div.style.left = GetRandInt(576, 0) + "px";
-    $(GameSettings.playAreaDiv).append(div);
+    div.style.top = GetRandInt(0, 790) + "px";
+    $(GameSettings.gameAreaDiv).append(div);
 }
 
 function createStars() {
@@ -28,19 +28,3 @@ function createStars() {
         GameManager.timeouts.push(window.setTimeout(addStar, delay + 666, "starBig"));
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

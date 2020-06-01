@@ -89,7 +89,7 @@ const GameSettings = {
 
   playerDivName: "playerSprite",
   playerStart: {
-    x: 360,
+    x: 100,
     y: 440,
   },
 

@@ -63,9 +63,9 @@ body {
   top: 10px;
   width: 3px;
   height: 3px;
-  background-color: gray;
   animation-duration: 5s;
-}
+  background-color: gray;
+  }
 
 .starMedium {
   top: 50px;
@@ -84,18 +84,18 @@ body {
 
 @keyframes starX {
   from {
-    transform: translateX(600px);
+    transform: translateX(100vw);
   }
   to {
-    transform: translateX(-30px);
+    transform: translateX(-200px);
   }
 }
 
 @keyframes explosion {
-    0%   {background-image: url("/assets/explosion/smallexplode1.png");}
-    10%   {background-image: url("/assets/Explosion/smallexplode2.png"); }
-    20%   {background-image: url("/assets/Explosion/smallexplode3.png"); }
-    30%   {background-image: url("/assets/Explosion/smallexplode4.png"); }
+    0%   {background-image: url("../explosion/smallexplode1.png");}
+    10%   {background-image: url("../Explosion/smallexplode2.png"); }
+    20%   {background-image: url("../Explosion/smallexplode3.png"); }
+    30%   {background-image: url("../Explosion/smallexplode4.png"); }
     40%   {background-image: url("/assets/Explosion/smallexplode5.png");}
     60%   {background-image: url("/assets/Explosion/smallexplode6.png");opacity: 0.9;}
     80%   {background-image: url("/assets/Explosion/smallexplode7.png");opacity: 0.8;}

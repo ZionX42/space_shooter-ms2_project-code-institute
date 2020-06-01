@@ -19,7 +19,7 @@ createExplosion(position) {
         div.id = divId;
         div.style.left = (position.x + this.offSet.x) + 'px';
         div.style.top = (position.y  + this.offSet.y) + 'px';
-        $(GameSettings.playAreaDiv).append(div);
+        $(GameSettings.gameAreaDiv).append(div);
         setTimeout(function() {
             $('#' + divId).remove();
         }, GameSettings.explosionTimeout);

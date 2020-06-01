@@ -160,6 +160,7 @@ function resetGame() {
   writeMessage("Press Space To Start");
 }
 
+// Adds relevant images form the assets folder to the game play
 function processAsset(indexNum) {
   let img = new Image();
   let fileName = "assets/" + ImageFiles[indexNum] + ".png";
