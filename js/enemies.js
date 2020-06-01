@@ -171,7 +171,7 @@ class EnemyCollection {
             bu.killMe();
             en.lives--;
             if (en.lives <= 0) {
-              playSound("explosion");
+              playSound("death");
               this.player.incrementScore(en.score);
               en.killMe();
               let cp = en.getCenterPoint();

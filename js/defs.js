@@ -14,7 +14,7 @@ const ImageFiles = [
   "explosion/smallexplode9",
 ];
 
-const ImagePath = [ "assets/explosion", "assets/bullets", "assets/enemies"];
+// const ImagePath = [ "assets/explosion", "assets/bullets", "assets/enemies"];
 
 // Sounds definition reference
 const soundFiles = [
@@ -26,8 +26,10 @@ const soundFiles = [
   "completed",
   "shoot_laser1",
   "death",
+  "shielddown",
+  "DST-DasElectron",
 ];
-const soundPath = "assets/Sounds/";
+const soundPath = "assets/sounds/";
 
 // Way Points for the enemy movements & starting points
 const WayPoints = {
@@ -146,6 +148,7 @@ let GameManager = {
   player: undefined,
   bullets: undefined,
   explosions: undefined,
+  sounds: {},
   timeouts: [],
   phase: GameSettings.gamePhase.gameOver,
   lastUpdated: Date.now(),

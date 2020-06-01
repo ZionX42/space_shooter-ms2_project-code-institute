@@ -73,7 +73,7 @@ function runCountDown() {
   playSound("countdown");
   for (let i = 0; i < GameSettings.countDownValues.length; ++i) {
     setTimeout(
-      writeMessage,
+      setCountDownValue,
       GameSettings.countdownGap * (i + 1),
       GameSettings.countDownValues[i]
     );
@@ -172,6 +172,7 @@ function resetGame() {
   GameManager.elapsedTime = 0;
 
   writeMessage("Press Space To Start");
+  // playSound("DST-DasElectron");
 }
 
 // Adds relevant images form the assets folder to the game play
@@ -200,6 +201,7 @@ function processAsset(indexNum) {
 $(function () {
   console.log("ready..!");
   console.log("GameSettings:GameSettings", GameSettings);
+  initSounds();
   setUpSequences();
   $(document).keydown(function (e) {
     if (GameManager.phase == GameSettings.gamePhase.readyToplay) {
@@ -228,4 +230,6 @@ $(function () {
     }
   });
   processAsset(0);
+
+ 
 });

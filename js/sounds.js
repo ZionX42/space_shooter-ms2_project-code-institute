@@ -1,3 +1,4 @@
+// Setting up the sound functions for the game play
 function loadSound(fileName) {
     GameManager.sounds[fileName] = new Audio(soundPath + fileName + '.wav');
 }
@@ -11,5 +12,3 @@ function initSounds() {
 function playSound(sound) {
     GameManager.sounds[sound].play();
 }
-
-
