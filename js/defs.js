@@ -18,8 +18,6 @@ const ImageFiles = [
   "explosion/smallexplode9",
 ];
 
-// const ImagePath = [ "assets/explosion", "assets/bullets", "assets/enemies"];
-
 // Sounds definition reference
 const soundFiles = [
   "countdown",
