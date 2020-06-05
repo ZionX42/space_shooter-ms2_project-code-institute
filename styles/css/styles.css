@@ -18,6 +18,12 @@ body {
   overflow: hidden;
 }
 
+/* .music {
+  color: blueviolet;
+  width: 30px;
+  height: 10px;
+}  */
+
 #scoreContainer {
   position: absolute;
   left: 10px;
@@ -114,3 +120,4 @@ body {
   background-repeat: no-repeat;
   z-index: 20;
 }
+
