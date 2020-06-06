@@ -17,6 +17,7 @@ class Enemy extends Sprite {
     this.lives = sequence.lives;
     this.speed = sequence.speed;
     this.readInWaypoints(sequence.waypoints);
+    console.log(assetDesc);
   }
 
   //   Shifting the movement of the enemy
