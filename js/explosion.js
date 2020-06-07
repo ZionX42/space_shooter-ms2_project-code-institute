@@ -17,6 +17,7 @@ createExplosion(position) {
         div.classList.add("explosion");
         let divId = 'explosion_' + this.count;
         div.id = divId;
+        console.log(position);
         div.style.left = (position.x + this.offSet.x) + 'px';
         div.style.top = (position.y  + this.offSet.y) + 'px';
         $(GameSettings.gameAreaDiv).append(div);

@@ -315,7 +315,7 @@ function setUpSequences() {
   );
   createSequence(
     600,
-    "Enemies/destroy",
+    "enemies/destroy",
     1,
     AttackBlocks.BADDIETYPE1,
     500,
@@ -395,7 +395,7 @@ function setUpSequences() {
   );
   createSequence(
     600,
-    "Enemies/destroy",
+    "enemies/destroy",
     1,
     AttackBlocks.BADDIETYPE2,
     500,
