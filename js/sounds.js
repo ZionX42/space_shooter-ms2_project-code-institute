@@ -12,3 +12,13 @@ function initSounds() {
 function playSound(sound) {
     GameManager.sounds[sound].play();
 }
+
+let x = loadSound("DST-DasElectron"); 
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+}

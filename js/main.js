@@ -57,6 +57,12 @@ function endCountDown() {
   GameManager.phase = GameSettings.gamePhase.playing;
   GameManager.lastUpdated = Date.now();
   setTimeout(tick, GameSettings.targetFPS);
+  
+  if (GameSettings.gamePhase.playing == true) {
+    playSound("DST-DasElectron");
+  } else if (GameManager.enemies.gameOver == true){
+    pauseAudio();
+  }
 }
 
 // Play countdown sound function
@@ -172,7 +178,7 @@ function resetGame() {
   GameManager.elapsedTime = 0;
 
   writeMessage("Press Space To Start");
-  // playSound("DST-DasElectron");
+ 
 }
 
 // Adds relevant images form the assets folder to the game play
