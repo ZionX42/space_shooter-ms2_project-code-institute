@@ -99,14 +99,14 @@ body {
 
 @keyframes explosion {
     0%   {background-image: url("../../assets/explosion/smallexplode1.png");}
-    10%   {background-image: url("../../assets/explosion/smallexplode2.png"); }
-    20%   {background-image: url("../../assets/explosion/smallexplode3.png"); }
-    30%   {background-image: url("../../assets/explosion/smallexplode4.png"); }
+    10%   {background-image: url("../../assets/explosion/smallexplode2.png");}
+    20%   {background-image: url("../../assets/explosion/smallexplode3.png");}
+    30%   {background-image: url("../../assets/explosion/smallexplode4.png");}
     40%   {background-image: url("../../assets/explosion/smallexplode5.png");}
-    60%   {background-image: url("../../assets/explosion/smallexplode6.png");opacity: 0.9;}
-    80%   {background-image: url("../../assets/explosion/smallexplode7.png");opacity: 0.8;}
-    90%   {background-image: url("../../assets/explosion/smallexplode8.png");opacity: 0.5;}
-    100%   {background-image: url("../../assets/explosion/smallexplode9.png");opacity: 0.3;}
+    60%   {background-image: url("../../assets/explosion/smallexplode6.png");}
+    80%   {background-image: url("../../assets/explosion/smallexplode7.png");}
+    90%   {background-image: url("../../assets/explosion/smallexplode8.png");}
+    100%   {background-image: url("../../assets/explosion/smallexplode9.png");}
 }
 
 .explosion {
@@ -114,7 +114,7 @@ body {
   height: 100px;
   position: absolute;
   left: 500px;
-  top: 300px;
+  top: 500px;
   animation-name: explosion;
   animation-duration: 0.8s;
   background-repeat: no-repeat;

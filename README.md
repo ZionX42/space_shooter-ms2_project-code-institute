@@ -181,14 +181,18 @@ Background music from <a href="http://www.nosoapradio.us/">nosoapradio</a>.
 Space Shooter styles & Libraries: 
 - [rinovethamoses97](https://github.com/rinovethamoses97/Space-Invaders-Game)
 - [Jafnee](https://github.com/Jafnee/Generic-Space-Shooter)
-- [bluefeversoft](https://github.com/bluefeversoft/html_invaders)
 
 README referenced from [CharlieJT](https://github.com/CharlieJT/Simon-Memory-Game) 
 
 ## Acknowledgement
 
+Most of the JS file libraries used in the game came from [bluefeversoft](https://github.com/bluefeversoft/html_invaders). 
+
+The tutorial for he game dynamics and how-to code are based on Bluefever Sofware's youtube playlist  [HTML Invaders](https://www.youtube.com/playlist?list=PLZ1QII7yudbdBS1ymLLrVYNR_v9cCnCYi). 
 
 Special thanks to some of the tutors that were essential in completing this project, especially to Tim Nelson who went above and beyond to support me to the very end!
 
 ## Disclaimer
 All content on the website, including images, are used for educational purposes only.
+
+All the code is open-sourced under GNU General Public License v3.0 and permition was granted to use any code libraries for the development of this game.
