@@ -1,11 +1,23 @@
-# Interactive Frontend Milestone Project 2 - Rick's Space Shooter Game
-## By Rick Nassar
----
+<h1 align="center">
+Interactive Frontend Milestone Project 2 - Rick's Space Shooter Game
+</h1>
+
+<h1 align="center">
+<img src="readme-images/the-gameplay.jpg" height=300 alt="Keys used to play the game">
+</h1>
+<br>    
+
+<div align="center"> 
+
 *Dark and cold, Rick & Morty wake up in their spacecraft without any knowledge of where they are. It took Rick a few seconds though to realise they just transported to Rick's most hated universe, which he calls..* **THE JERRY VERSE!!!**
 
 *They have to navigate their way to find Rick's Portal gun that seems to be on a distant planet called, FCK3CPO.*
 
 *And the adventure begins!*
+
+[**CLICK HERE TO PLAY THE GAME!**](https://zionx42.github.io/space_shooter-ms2_project-code-institute/)
+</div> 
+
 
 ---
 
@@ -35,7 +47,7 @@
 A desktop Space Shooter game that brings back the nostalgic 80s era with a modern Rick & Morty themed twist.
 
 <br><br>
-    <img src="readme-images/the-gameplay.jpg" height=300 alt="Keys used to play the game">
+    <img src="readme-images/game-screenshot.png" height=300 alt="Keys used to play the game">
 <br><br>
 ### Player Experience
 
