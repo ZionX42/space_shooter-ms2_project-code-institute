@@ -18,6 +18,9 @@ function tick() {
     if (GameManager.player.lives <= 0) {
       console.log("game over");
       showGameOver();
+      let gameMusic = $("#gameMusic")[0]; //Stops the background music
+gameMusic.currentTime = 0;
+gameMusic.pause();
     } else if (GameManager.phase == GameSettings.gamePhase.playing) {
       setTimeout(tick, GameSettings.targetFPS);
     }
@@ -58,11 +61,10 @@ function endCountDown() {
   GameManager.lastUpdated = Date.now();
   setTimeout(tick, GameSettings.targetFPS);
   
-  if (GameSettings.gamePhase.playing == true) {
-    playSound("DST-DasElectron");
-  } else if (GameManager.enemies.gameOver == true){
-    pauseAudio();
-  }
+  // Adds the background music when the game starts
+  let gameMusic = $("#gameMusic")[0];
+gameMusic.currentTime = 0;
+gameMusic.play();
 }
 
 // Play countdown sound function
