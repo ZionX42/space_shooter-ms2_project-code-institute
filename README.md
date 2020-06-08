@@ -178,7 +178,7 @@ Background music from <a href="http://www.nosoapradio.us/">nosoapradio</a>.
 
 ### Game Development
 
-Space Shooter styles: 
+Space Shooter styles & Libraries: 
 - [rinovethamoses97](https://github.com/rinovethamoses97/Space-Invaders-Game)
 - [Jafnee](https://github.com/Jafnee/Generic-Space-Shooter)
 - [bluefeversoft](https://github.com/bluefeversoft/html_invaders)
