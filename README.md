@@ -170,7 +170,7 @@ Spacecraft by <a href="https://wall.alphacoders.com/big.php?i=625914">Wallpaper 
 
 Enemies & Bullet by <a href="https://www.pinclipart.com/pindetail/iTxbTom_download-pickle-rick-from-rick-and-morty-clipart/">Pin Clipart</a>.
 
-Background stars scrolling by [Johan Karlsson](https://codepen.io/DonKarlssonSan/pen/qEQVaK).
+Background stars scrolling by [ohan JKarlsson](https://codepen.io/DonKarlssonSan/pen/qEQVaK).
 
 Explosions by  [Gifer](https://gifer.com/en/VRwF).
 

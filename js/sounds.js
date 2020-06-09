@@ -22,3 +22,5 @@ function playAudio() {
 function pauseAudio() { 
   x.pause(); 
 }
+
+// Initial code cited from: bluefeversoft, https://github.com/bluefeversoft/html_invaders

@@ -28,3 +28,4 @@ function createStars() {
         GameManager.timeouts.push(window.setTimeout(addStar, delay + 666, "starBig"));
     }
 }
+// Initial code cited from: Johan Karlsson, https://codepen.io/DonKarlssonSan/pen/qEQVaK

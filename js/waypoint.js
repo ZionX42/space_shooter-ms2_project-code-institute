@@ -6,3 +6,5 @@ class Waypoint {
         this.dir_y = dir_y;
     }
 }
+
+// Initial code cited from: bluefeversoft, https://github.com/bluefeversoft/html_invaders

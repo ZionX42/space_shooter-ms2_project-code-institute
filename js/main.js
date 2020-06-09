@@ -241,3 +241,5 @@ $(function () {
 
  
 });
+
+// Initial code cited from: bluefeversoft, https://github.com/bluefeversoft/html_invaders

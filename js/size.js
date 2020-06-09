@@ -9,3 +9,5 @@ class Size {
 
 // let s = new Size (19 , 30);
 // console.log ("s:" , s);
+
+// Initial code cited from: bluefeversoft, https://github.com/bluefeversoft/html_invaders

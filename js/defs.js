@@ -730,3 +730,5 @@ let GameManager = {
   elapsedTime: 0,
   fps: 0,
 };
+
+// Initial code cited from: bluefeversoft, https://github.com/bluefeversoft/html_invaders

@@ -48,3 +48,5 @@ class Rect {
     return true;
   }
 }
+
+// Initial code cited from: bluefeversoft, https://github.com/bluefeversoft/html_invaders
