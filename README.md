@@ -16,7 +16,14 @@ Interactive Frontend Milestone Project 2 - Rick's Space Shooter Game
 *And the adventure begins!*
 
 [**CLICK HERE TO PLAY THE GAME!**](https://zionx42.github.io/space_shooter-ms2_project-code-institute/)
+
 </div> 
+
+<div align= "center">
+
+(This game was made possible thanks to video tutorial by [Bluefever Software](https://www.youtube.com/playlist?list=PLZ1QII7yudbdBS1ymLLrVYNR_v9cCnCYi))
+
+</div>
 
 
 ---
@@ -39,7 +46,11 @@ Interactive Frontend Milestone Project 2 - Rick's Space Shooter Game
 7. [**Acknowledgement**](#acknowledgement)
 8. [**Disclaimer**](#Disclaimer)
 
+<br>
+
+
 ---
+
 ## Development
 
 ### Project Purpose
@@ -142,34 +153,33 @@ When it came to Javascript most of the support and code validation came from pos
 
 The Code Institute Tutors were also key in validating the JS & jquery code.
 
-<!-- Tools also used to validate JS:
-
+Tools also used to validate JS:
 
 - [JShint](https://jshint.com/)
--  -->
+- [Code Beautify JavaScript Validator](https://codebeautify.org/jsvalidate)
 
 ## Credits
 
 ### Content
 
-All the content was written by me.
+All the content was written by Rick Nassar.
 
 ### Images
 
 Spacecraft by <a href="https://wall.alphacoders.com/big.php?i=625914">Wallpaper Abyss</a>. It was cropped and background removed with PowerPoint 2016.</li>
 
- Enemies & Bullet by <a href="https://www.pinclipart.com/pindetail/iTxbTom_download-pickle-rick-from-rick-and-morty-clipart/">Pin Clipart</a>.
+Enemies & Bullet by <a href="https://www.pinclipart.com/pindetail/iTxbTom_download-pickle-rick-from-rick-and-morty-clipart/">Pin Clipart</a>.
 
-Background stars scrolling by Johan Karlsson: https://codepen.io/DonKarlssonSan/pen/qEQVaK
+Background stars scrolling by [Johan Karlsson](https://codepen.io/DonKarlssonSan/pen/qEQVaK).
 
-Explosions: [Gifer](https://gifer.com/en/VRwF)
+Explosions by  [Gifer](https://gifer.com/en/VRwF).
 
-Splitting GIF into static png images: [Ezgif](https://ezgif.com/split)
+Splitting GIF into static png images: [Ezgif](https://ezgif.com/split).
 
 
 ### Sounds
 
- Sound Effects <a href="https://github.com/bluefeversoft/html_invaders">bluefeversoft</a> and <a href="https://freesound.org/people/HenryRichard/sounds/448266/">HenryRichard</a>
+ Sound Effects <a href="https://github.com/bluefeversoft/html_invaders">bluefeversoft</a> and <a href="https://freesound.org/people/HenryRichard/sounds/448266/">HenryRichard</a>.
 
  Shooting sounds and other play sounds by <a href="http://www.kenney.nl">Kenney</a>.
               
@@ -186,11 +196,11 @@ README referenced from [CharlieJT](https://github.com/CharlieJT/Simon-Memory-Gam
 
 ## Acknowledgement
 
-Most of the JS file libraries used in the game came from [bluefeversoft](https://github.com/bluefeversoft/html_invaders). 
+JS file libraries used in the game were pulled from [bluefeversoft](https://github.com/bluefeversoft/html_invaders) and edited to match this game's mechanics. 
 
 The tutorial for he game dynamics and how-to code are based on Bluefever Sofware's youtube playlist  [HTML Invaders](https://www.youtube.com/playlist?list=PLZ1QII7yudbdBS1ymLLrVYNR_v9cCnCYi). 
 
-Special thanks to some of the tutors that were essential in completing this project, especially to Tim Nelson who went above and beyond to support me to the very end!
+Special thanks to some of the tutors at Code Institute who were essential in completing this project, especially to Scott Kipp and Tim Nelson who went above and beyond to support me to the very end!
 
 ## Disclaimer
 All content on the website, including images, are used for educational purposes only.
