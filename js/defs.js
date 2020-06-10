@@ -37,7 +37,7 @@ const WayPoints = {
   STREAM60: [
     {
       rotation: 0,
-      x: 60,
+      x: 240,
       y: -90,
       dir_x: 0,
       dir_y: 0,
@@ -599,7 +599,7 @@ const WayPoints = {
   ],
 };
 
-// Variations of Enemy moveing speed
+// Variations of Enemy movement speed
 const enemySpeed = {
   slow: 100 / 1000,
   medium: 150 / 1000,

@@ -1,7 +1,8 @@
 body {
   background-color: rgb(3, 3, 3);
-  font-family: Impact, Charcoal, sans-serif;
+  font-family: Impact, Tahoma, sans-serif, Charcoal, sans-serif;
   color: white;
+  font-weight: 50;
 }
 
 #gameWindow {
@@ -98,15 +99,15 @@ body {
 }
 
 @keyframes explosion {
-    0%   {background-image: url("../../assets/explosion/smallexplode1.png");}
-    10%   {background-image: url("../../assets/explosion/smallexplode2.png");}
-    20%   {background-image: url("../../assets/explosion/smallexplode3.png");}
-    30%   {background-image: url("../../assets/explosion/smallexplode4.png");}
-    40%   {background-image: url("../../assets/explosion/smallexplode5.png");}
-    60%   {background-image: url("../../assets/explosion/smallexplode6.png");}
-    80%   {background-image: url("../../assets/explosion/smallexplode7.png");}
-    90%   {background-image: url("../../assets/explosion/smallexplode8.png");}
-    100%   {background-image: url("../../assets/explosion/smallexplode9.png");}
+    0%   {background-image: url("../assets/explosion/smallexplode1.png");}
+    10%   {background-image: url("../assets/explosion/smallexplode2.png");}
+    20%   {background-image: url("../assets/explosion/smallexplode3.png");}
+    30%   {background-image: url("../assets/explosion/smallexplode4.png");}
+    40%   {background-image: url("../assets/explosion/smallexplode5.png");}
+    60%   {background-image: url("../assets/explosion/smallexplode6.png");}
+    80%   {background-image: url("../assets/explosion/smallexplode7.png");}
+    90%   {background-image: url("../assets/explosion/smallexplode8.png");}
+    100%   {background-image: url("../assets/explosion/smallexplode9.png");}
 }
 
 .explosion {
@@ -121,3 +122,19 @@ body {
   z-index: 20;
 }
 
+#game-play {
+  background-color: rgb(255, 255, 255);
+  font-family: Tahoma, sans-serif, Charcoal, sans-serif;
+  color: rgb(24, 24, 24);
+  font-weight: 50;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+}
+
+#about {
+  background-color: rgb(3, 3, 3);
+  font-family: Tahoma, sans-serif, Charcoal, sans-serif;
+  color: white;
+  font-weight: 50;
+}

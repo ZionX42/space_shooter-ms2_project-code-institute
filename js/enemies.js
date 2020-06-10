@@ -282,6 +282,8 @@ function createSequence(
 }
 
 // Function that adds the enemy calls/spawning to sequence
+// Sample: reateSequence([Delay time],['Enemies Image'], (Number of enemies) 1,  
+//    (Attack style) AttackBlocks.STREAMDOWN, 100, 1, enemySpeed.medium, 1000);
 function setUpSequences() {
   createSequence(
     600,
@@ -290,8 +292,18 @@ function setUpSequences() {
     AttackBlocks.STREAMDOWN,
     100,
     1,
-    enemySpeed.medium,
-    1000
+    enemySpeed.slow,
+   500
+  );
+  createSequence(
+    600,
+    "enemies/destroy",
+    1,
+    AttackBlocks.BADDIETYPE2,
+    500,
+    3,
+    enemySpeed.slow,
+    300
   );
   createSequence(
     600,
@@ -319,9 +331,9 @@ function setUpSequences() {
     1,
     AttackBlocks.BADDIETYPE1,
     500,
-    8,
+    3,
     enemySpeed.slow,
-    500
+    300
   );
   createSequence(
     600,
@@ -399,9 +411,9 @@ function setUpSequences() {
     1,
     AttackBlocks.BADDIETYPE2,
     500,
-    8,
+    3,
     enemySpeed.slow,
-    500
+    300
   );
   createSequence(
     600,
