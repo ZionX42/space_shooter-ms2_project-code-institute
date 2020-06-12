@@ -155,6 +155,8 @@ The technology platforms that I used to develop this game:
 
 **Github:** Where all the repositories that were pushed from VSC.
 
+**Bootstrap:** It was used for the "Go to Game" buttons.
+
 ## Testing
 
 ### Automated Testing
