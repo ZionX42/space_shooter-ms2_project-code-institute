@@ -282,7 +282,7 @@ function createSequence(
 }
 
 // Function that adds the enemy calls/spawning to sequence
-// Sample: reateSequence([Delay time],['Enemies Image'], (Number of enemies) 1,  
+// Sample: reateSequence([Delay time],['Enemies Image'], (Number of enemies) 1,
 //    (Attack style) AttackBlocks.STREAMDOWN, 100, 1, enemySpeed.medium, 1000);
 function setUpSequences() {
   createSequence(
@@ -293,7 +293,7 @@ function setUpSequences() {
     100,
     1,
     enemySpeed.slow,
-   500
+    500
   );
   createSequence(
     600,

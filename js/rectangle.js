@@ -36,7 +36,7 @@ class Rect {
     }
   }
 
-// Removes enemy when bullet hits
+  // Removes enemy when bullet hits
   IntersectedBy(rect) {
     if (this.origin.x > rect.max.x || rect.origin.x > this.max.x) {
       return false;

@@ -1,31 +1,35 @@
 // Adding the Stars scrolling to the game background
 function GetRandInt(from, range) {
-    return Math.floor(Math.random() * range) + from;
+  return Math.floor(Math.random() * range) + from;
 }
 
 function removeStars() {
-    $('.star').remove();
+  $(".star").remove();
 }
 
 function pauseStars() {
-    $('.star').css({
-        "animation-play-state": "paused"
-    });
+  $(".star").css({
+    "animation-play-state": "paused",
+  });
 }
 
 function addStar(starClass) {
-    let div = document.createElement("div");
-    div.classList.add("star", starClass);
-    div.style.top = GetRandInt(0, 790) + "px";
-    $(GameSettings.gameAreaDiv).append(div);
+  let div = document.createElement("div");
+  div.classList.add("star", starClass);
+  div.style.top = GetRandInt(0, 790) + "px";
+  $(GameSettings.gameAreaDiv).append(div);
 }
 
 function createStars() {
-    for(let i = 0; i < 10; ++i) {
-        let delay = i * 333;
-        GameManager.timeouts.push(window.setTimeout(addStar, delay, "starSmall"));
-        GameManager.timeouts.push(window.setTimeout(addStar, delay + 333, "starMedium"));
-        GameManager.timeouts.push(window.setTimeout(addStar, delay + 666, "starBig"));
-    }
+  for (let i = 0; i < 10; ++i) {
+    let delay = i * 333;
+    GameManager.timeouts.push(window.setTimeout(addStar, delay, "starSmall"));
+    GameManager.timeouts.push(
+      window.setTimeout(addStar, delay + 333, "starMedium")
+    );
+    GameManager.timeouts.push(
+      window.setTimeout(addStar, delay + 666, "starBig")
+    );
+  }
 }
 // Initial code cited from: Johan Karlsson, https://codepen.io/DonKarlssonSan/pen/qEQVaK

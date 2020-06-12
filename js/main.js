@@ -19,8 +19,8 @@ function tick() {
       console.log("game over");
       showGameOver();
       let gameMusic = $("#gameMusic")[0]; //Stops the background music
-gameMusic.currentTime = 0;
-gameMusic.pause();
+      gameMusic.currentTime = 0;
+      gameMusic.pause();
     } else if (GameManager.phase == GameSettings.gamePhase.playing) {
       setTimeout(tick, GameSettings.targetFPS);
     }
@@ -60,11 +60,11 @@ function endCountDown() {
   GameManager.phase = GameSettings.gamePhase.playing;
   GameManager.lastUpdated = Date.now();
   setTimeout(tick, GameSettings.targetFPS);
-  
+
   // Adds the background music when the game starts
   let gameMusic = $("#gameMusic")[0];
-gameMusic.currentTime = 0;
-gameMusic.play();
+  gameMusic.currentTime = 0;
+  gameMusic.play();
 }
 
 // Play countdown sound function
@@ -180,7 +180,6 @@ function resetGame() {
   GameManager.elapsedTime = 0;
 
   writeMessage("Press Space To Start");
- 
 }
 
 // Adds relevant images form the assets folder to the game play
@@ -238,8 +237,6 @@ $(function () {
     }
   });
   processAsset(0);
-
- 
 });
 
 // Initial code cited from: bluefeversoft, https://github.com/bluefeversoft/html_invaders

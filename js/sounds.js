@@ -1,26 +1,26 @@
 // Setting up the sound functions for the game play
 function loadSound(fileName) {
-    GameManager.sounds[fileName] = new Audio(soundPath + fileName + '.wav');
+  GameManager.sounds[fileName] = new Audio(soundPath + fileName + ".wav");
 }
 
 function initSounds() {
-    for (let i = 0; i < soundFiles.length; ++i) {
-		loadSound(soundFiles[i]);
-	}
+  for (let i = 0; i < soundFiles.length; ++i) {
+    loadSound(soundFiles[i]);
+  }
 }
 
 function playSound(sound) {
-    GameManager.sounds[sound].play();
+  GameManager.sounds[sound].play();
 }
 
-let x = loadSound("DST-DasElectron"); 
+let x = loadSound("DST-DasElectron");
 
-function playAudio() { 
-  x.play(); 
-} 
+function playAudio() {
+  x.play();
+}
 
-function pauseAudio() { 
-  x.pause(); 
+function pauseAudio() {
+  x.pause();
 }
 
 // Initial code cited from: bluefeversoft, https://github.com/bluefeversoft/html_invaders
